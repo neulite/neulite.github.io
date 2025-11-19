@@ -200,18 +200,32 @@ Neuliteカーネル用のコンパイル時設定ファイル。BMTKのconfig.js
 .. note::
    config.hはNeuliteカーネルのビルド時に使用されるため、このファイルを変更した場合はカーネルの再ビルドが必要です。
 
-Neuliteカーネルの実行
-=====================
+Neuliteカーネルのビルドと実行
+=============================
 
-生成されたファイルを使用してNeuliteカーネルを実行します：
+ステップ1: config.hの設置
+-------------------------
+
+bionet_liteが生成した ``config.h`` をカーネルディレクトリにコピーします：
 
 .. code-block:: bash
 
-   # Navigate to neulite directory
-   cd neulite
+   cp sim_ch01_nl/kernel/config.h /path/to/neulite/kernel/
 
-   # Run Neulite kernel
-   ./nl mcortex_population.csv mcortex_mcortex_connection.csv
+ステップ2: カーネルのビルド
+---------------------------
+
+.. code-block:: bash
+
+   cd /path/to/neulite/kernel
+   make
+
+ステップ3: シミュレーションの実行
+---------------------------------
+
+.. code-block:: bash
+
+   ./nl /path/to/sim_ch01_nl/mcortex_population.csv /path/to/sim_ch01_nl/mcortex_mcortex_connection.csv
 
 シミュレーション結果ファイル
 ----------------------------

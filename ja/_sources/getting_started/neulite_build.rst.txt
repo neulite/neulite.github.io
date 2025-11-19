@@ -15,30 +15,26 @@ Neuliteカーネルのビルド
 ビルド手順
 ==========
 
-ステップ1: ソースコードのダウンロード
+ステップ1: neuliteリポジトリのクローン
 --------------------------------------
 
-Neuliteカーネルのソースコードをダウンロードします：
+.. note::
+   bionet_liteセットアップ時に既にクローン済みの場合は、このステップをスキップしてください。
+
+neuliteリポジトリをクローンします：
 
 .. code-block:: bash
 
-   # Download file from download link
-   wget [Neulite kernel download URL]
+   git clone https://github.com/neulite/neulite.git
 
-   # Or use curl
-   curl -L -O [Neulite kernel download URL]
+ステップ2: カーネルディレクトリへ移動
+--------------------------------------
 
-
-ステップ2: ソースコードの展開
-------------------------------
-
-ダウンロードしたファイルを展開します：
+デフォルトカーネル（double exponential）のディレクトリに移動します：
 
 .. code-block:: bash
 
-   # Extract tarball
-   tar -xzf neulite_kernel-X.Y.Z.tar.gz
-   cd neulite_kernel-X.Y.Z
+   cd neulite/kernel
 
 ステップ3: ビルド
 ------------------

@@ -114,31 +114,31 @@
 <li class="toctree-l4"><a class="reference internal" href="#id3">Step 1: Create Virtual Environment (Recommended)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bmtkneuron">Step 2: Install BMTK and NEURON</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">Step 3: Install Required Packages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">Step 4: Download bionet_lite</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">Step 5: Place bionet_lite</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">Step 6: Verification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#neulite">Step 4: Clone the neulite Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Step 5: Place bionet_lite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Step 6: Verification</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Basic Usage</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#import">Changing the Import</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9">Network Construction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id10">Confirming Output Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Network Construction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Confirming Output Files</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">Optional Settings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">Details of Dependent Packages</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id13">Major Dependent Packages of bionet_lite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Optional Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Details of Dependent Packages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Major Dependent Packages of bionet_lite</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">Next Steps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id15">References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Next Steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">References</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="neulite_build.html">Building Neulite Kernel</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="neulite_build.html#id1">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neulite_build.html#id2">Build Procedure</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id3">Step 1: Download Source Code</a></li>
-<li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id4">Step 2: Extract Source Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id3">Step 1: Clone the neulite Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id4">Step 2: Navigate to Kernel Directory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id5">Step 3: Build</a></li>
 <li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id6">Step 4: Execution</a></li>
 </ul>
@@ -175,12 +175,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#kernel-config-h">kernel/config.h</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id5">Running the Neulite Kernel</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id6">Simulation Result Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id5">Building and Running the Neulite Kernel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#config-h">Step 1: Place config.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id6">Step 2: Build the Kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id7">Step 3: Run the Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id8">Simulation Result Files</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id7">Comparison of Execution Results with BMTK</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id9">Next Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id9">Comparison of Execution Results with BMTK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id11">Next Steps</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial02_spike_input.html">Tutorial 2: Spike Input Simulation</a><ul>
@@ -582,25 +585,23 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 </pre></div>
 </div>
 </section>
-<section id="id5">
-<h3>Step 4: Download bionet_lite<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
-<p>Download the bionet_lite package:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download file from download link</span>
-wget<span class="w"> </span><span class="o">[</span>bionet_lite<span class="w"> </span>download<span class="w"> </span>URL<span class="o">]</span>
-
-<span class="c1"># Or use curl</span>
-curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span><span class="o">[</span>bionet_lite<span class="w"> </span>download<span class="w"> </span>URL<span class="o">]</span>
+<section id="neulite">
+<h3>Step 4: Clone the neulite Repository<a class="headerlink" href="#neulite" title="Link to this heading"></a></h3>
+<p>Clone the neulite repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/neulite/neulite.git
 </pre></div>
 </div>
+<p>The repository contains the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bionetlite/</span></code> - bionet_lite module</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kernel/</span></code> - Neulite kernel (default)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flavors/</span></code> - Kernel variations</p></li>
+</ul>
 </section>
-<section id="id6">
-<h3>Step 5: Place bionet_lite<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
-<p>Extract the downloaded file and place <code class="docutils literal notranslate"><span class="pre">bionetlite.py</span></code> in the same directory as your network construction code:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract tarball</span>
-tar<span class="w"> </span>-xzf<span class="w"> </span>bionet_lite-X.Y.Z.tar.gz
-
-<span class="c1"># Copy bionetlite.py to working directory</span>
-cp<span class="w"> </span>bionet_lite-X.Y.Z/bionetlite.py<span class="w"> </span>/path/to/your/network/code/
+<section id="id5">
+<h3>Step 5: Place bionet_lite<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>Place <code class="docutils literal notranslate"><span class="pre">bionetlite.py</span></code> from the cloned repository in the same directory as your network construction code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>neulite/bionetlite/bionetlite.py<span class="w"> </span>/path/to/your/network/code/
 </pre></div>
 </div>
 <p><strong>Directory Structure:</strong></p>
@@ -622,8 +623,8 @@ cp<span class="w"> </span>bionet_lite-X.Y.Z/bionetlite.py<span class="w"> </span
 </pre></div>
 </div>
 </section>
-<section id="id7">
-<h3>Step 6: Verification<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<section id="id6">
+<h3>Step 6: Verification<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>Verify that the placement is correct:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Move to network construction code directory</span>
 <span class="nb">cd</span><span class="w"> </span>/path/to/your/network/code/
@@ -642,8 +643,8 @@ ls<span class="w"> </span>bionetlite.py
 <p>If no errors are displayed, the setup is successful.</p>
 </section>
 </section>
-<section id="id8">
-<h2>Basic Usage<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<section id="id7">
+<h2>Basic Usage<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <p>Converting existing bionet code to bionet_lite is very simple. Just change the import statement, and the rest of the code can be used as-is.</p>
 <section id="import">
 <h3>Changing the Import<a class="headerlink" href="#import" title="Link to this heading"></a></h3>
@@ -656,8 +657,8 @@ ls<span class="w"> </span>bionetlite.py
 </pre></div>
 </div>
 </section>
-<section id="id9">
-<h3>Network Construction<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<section id="id8">
+<h3>Network Construction<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <p>The rest of the code is exactly the same as bionet:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create network</span>
 <span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;v1&#39;</span><span class="p">)</span>
@@ -681,8 +682,8 @@ ls<span class="w"> </span>bionetlite.py
 </pre></div>
 </div>
 </section>
-<section id="id10">
-<h3>Confirming Output Files<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<section id="id9">
+<h3>Confirming Output Files<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <p>bionet_lite generates files for Neulite in the <code class="docutils literal notranslate"><span class="pre">neulite/</span></code> directory:</p>
 <p><strong>Directory Structure</strong></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>neulite/
@@ -726,8 +727,8 @@ ls<span class="w"> </span>bionetlite.py
 </ul>
 </section>
 </section>
-<section id="id11">
-<h2>Optional Settings<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<section id="id10">
+<h2>Optional Settings<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
 <p>NeuliteBuilder can accept the following optional parameters:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span>
     <span class="s1">&#39;v1&#39;</span><span class="p">,</span>
@@ -738,10 +739,10 @@ ls<span class="w"> </span>bionetlite.py
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">convert_morphologies</span></code> and <code class="docutils literal notranslate"><span class="pre">convert_ion_channels</span></code> are True by default. In subsequent runs, you can skip conversion by setting these to False.</p>
 </section>
+<section id="id11">
+<h2>Details of Dependent Packages<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
 <section id="id12">
-<h2>Details of Dependent Packages<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
-<section id="id13">
-<h3>Major Dependent Packages of bionet_lite<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<h3>Major Dependent Packages of bionet_lite<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
 <p>bionet_lite depends on the following Python packages:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bmtk&gt;=1.0.0                    # Brain Modeling Toolkit
 neuron&gt;=8.0.0                  # NEURON simulator (required)
@@ -763,16 +764,16 @@ pip<span class="w"> </span>install<span class="w"> </span>mpi4py
 </div>
 </section>
 </section>
-<section id="id14">
-<h2>Next Steps<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id13">
+<h2>Next Steps<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="neulite_build.html"><span class="doc">Building Neulite Kernel</span></a> - Building Neulite Kernel</p></li>
 <li><p><a class="reference internal" href="../tutorials/tutorial01_single_cell.html"><span class="doc">Tutorial 1: Steady-State Current Injection in a Single Cell</span></a> - Practical Tutorial</p></li>
 <li><p><a class="reference internal" href="../user_guide/basic_usage.html"><span class="doc">Basic Usage</span></a> - Detailed Usage</p></li>
 </ul>
 </section>
-<section id="id15">
-<h2>References<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<section id="id14">
+<h2>References<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.neuron.yale.edu/neuron/">NEURON Official Site</a></p></li>
 <li><p><a class="reference external" href="https://alleninstitute.github.io/bmtk/installation.html">BMTK Installation Guide</a></p></li>

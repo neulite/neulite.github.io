@@ -115,31 +115,31 @@
 <li class="toctree-l4"><a class="reference internal" href="#id3">ステップ1: 仮想環境の作成（推奨）</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bmtkneuron">ステップ2: BMTKとNEURONのインストール</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">ステップ3: 必要なパッケージのインストール</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">ステップ4: bionet_liteのダウンロード</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">ステップ5: bionet_liteの配置</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">ステップ6: 動作確認</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#neulite">ステップ4: neuliteリポジトリのクローン</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">ステップ5: bionet_liteの配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">ステップ6: 動作確認</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">基本的な使い方</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">基本的な使い方</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#import">importの変更</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9">ネットワークの構築</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id10">出力ファイルの確認</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">ネットワークの構築</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">出力ファイルの確認</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">オプション設定</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">依存パッケージの詳細</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id13">bionet_liteの主要な依存パッケージ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">オプション設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">依存パッケージの詳細</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">bionet_liteの主要な依存パッケージ</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">次のステップ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id15">参考資料</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">次のステップ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">参考資料</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="neulite_build.html">Neuliteカーネルのビルド</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="neulite_build.html#id1">前提条件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neulite_build.html#id2">ビルド手順</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id3">ステップ1: ソースコードのダウンロード</a></li>
-<li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id4">ステップ2: ソースコードの展開</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id3">ステップ1: neuliteリポジトリのクローン</a></li>
+<li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id4">ステップ2: カーネルディレクトリへ移動</a></li>
 <li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id5">ステップ3: ビルド</a></li>
 <li class="toctree-l4"><a class="reference internal" href="neulite_build.html#id6">ステップ4: 実行</a></li>
 </ul>
@@ -176,12 +176,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#kernel-config-h">kernel/config.h</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id5">Neuliteカーネルの実行</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id6">シミュレーション結果ファイル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id5">Neuliteカーネルのビルドと実行</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#config-h">ステップ1: config.hの設置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id6">ステップ2: カーネルのビルド</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id7">ステップ3: シミュレーションの実行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id8">シミュレーション結果ファイル</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id7">BMTKとの実行結果の比較</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id9">次のステップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id9">BMTKとの実行結果の比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial01_single_cell.html#id11">次のステップ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial02_spike_input.html">Tutorial 2: スパイク入力シミュレーション</a><ul>
@@ -583,25 +586,23 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 </pre></div>
 </div>
 </section>
-<section id="id5">
-<h3>ステップ4: bionet_liteのダウンロード<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
-<p>bionet_liteのパッケージをダウンロードします：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download file from download link</span>
-wget<span class="w"> </span><span class="o">[</span>bionet_lite<span class="w"> </span>download<span class="w"> </span>URL<span class="o">]</span>
-
-<span class="c1"># Or use curl</span>
-curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span><span class="o">[</span>bionet_lite<span class="w"> </span>download<span class="w"> </span>URL<span class="o">]</span>
+<section id="neulite">
+<h3>ステップ4: neuliteリポジトリのクローン<a class="headerlink" href="#neulite" title="Link to this heading"></a></h3>
+<p>neuliteリポジトリをクローンします：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/neulite/neulite.git
 </pre></div>
 </div>
+<p>リポジトリには以下が含まれています：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bionetlite/</span></code> - bionet_liteモジュール</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kernel/</span></code> - Neuliteカーネル（デフォルト）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flavors/</span></code> - カーネルのバリエーション</p></li>
+</ul>
 </section>
-<section id="id6">
-<h3>ステップ5: bionet_liteの配置<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
-<p>ダウンロードしたファイルを展開し、 <code class="docutils literal notranslate"><span class="pre">bionetlite.py</span></code> をネットワーク構築コードと同じディレクトリに配置します：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract tarball</span>
-tar<span class="w"> </span>-xzf<span class="w"> </span>bionet_lite-X.Y.Z.tar.gz
-
-<span class="c1"># Copy bionetlite.py to working directory</span>
-cp<span class="w"> </span>bionet_lite-X.Y.Z/bionetlite.py<span class="w"> </span>/path/to/your/network/code/
+<section id="id5">
+<h3>ステップ5: bionet_liteの配置<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>クローンしたリポジトリから <code class="docutils literal notranslate"><span class="pre">bionetlite.py</span></code> をネットワーク構築コードと同じディレクトリに配置します：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>neulite/bionetlite/bionetlite.py<span class="w"> </span>/path/to/your/network/code/
 </pre></div>
 </div>
 <p><strong>ディレクトリ構成：</strong></p>
@@ -623,8 +624,8 @@ cp<span class="w"> </span>bionet_lite-X.Y.Z/bionetlite.py<span class="w"> </span
 </pre></div>
 </div>
 </section>
-<section id="id7">
-<h3>ステップ6: 動作確認<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<section id="id6">
+<h3>ステップ6: 動作確認<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>配置が正しく完了したことを確認します：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Move to network construction code directory</span>
 <span class="nb">cd</span><span class="w"> </span>/path/to/your/network/code/
@@ -643,8 +644,8 @@ ls<span class="w"> </span>bionetlite.py
 <p>エラーが表示されなければ、セットアップは成功です。</p>
 </section>
 </section>
-<section id="id8">
-<h2>基本的な使い方<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<section id="id7">
+<h2>基本的な使い方<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <p>既存のbionetコードをbionet_liteに変換するのは非常に簡単です。import文を変更するだけで、残りのコードはそのまま使用できます。</p>
 <section id="import">
 <h3>importの変更<a class="headerlink" href="#import" title="Link to this heading"></a></h3>
@@ -657,8 +658,8 @@ ls<span class="w"> </span>bionetlite.py
 </pre></div>
 </div>
 </section>
-<section id="id9">
-<h3>ネットワークの構築<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<section id="id8">
+<h3>ネットワークの構築<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <p>以降のコードはbionetと全く同じです：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create network</span>
 <span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;v1&#39;</span><span class="p">)</span>
@@ -682,8 +683,8 @@ ls<span class="w"> </span>bionetlite.py
 </pre></div>
 </div>
 </section>
-<section id="id10">
-<h3>出力ファイルの確認<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<section id="id9">
+<h3>出力ファイルの確認<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <p>bionet_liteは、<code class="docutils literal notranslate"><span class="pre">neulite/</span></code> ディレクトリ内にNeulite用のファイルを生成します：</p>
 <p><strong>ディレクトリ構造</strong></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>neulite/
@@ -727,8 +728,8 @@ ls<span class="w"> </span>bionetlite.py
 </ul>
 </section>
 </section>
-<section id="id11">
-<h2>オプション設定<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<section id="id10">
+<h2>オプション設定<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
 <p>NeuliteBuilderは、以下のオプションパラメータを受け取ることができます：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span>
     <span class="s1">&#39;v1&#39;</span><span class="p">,</span>
@@ -739,10 +740,10 @@ ls<span class="w"> </span>bionetlite.py
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">convert_morphologies</span></code> と <code class="docutils literal notranslate"><span class="pre">convert_ion_channels</span></code> はデフォルトでTrueです。2回目以降の実行では、これらをFalseに設定することで変換をスキップできます。</p>
 </section>
+<section id="id11">
+<h2>依存パッケージの詳細<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
 <section id="id12">
-<h2>依存パッケージの詳細<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
-<section id="id13">
-<h3>bionet_liteの主要な依存パッケージ<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<h3>bionet_liteの主要な依存パッケージ<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
 <p>bionet_liteは以下のPythonパッケージに依存しています：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bmtk&gt;=1.0.0                    # Brain Modeling Toolkit
 neuron&gt;=8.0.0                  # NEURON simulator (required)
@@ -764,16 +765,16 @@ pip<span class="w"> </span>install<span class="w"> </span>mpi4py
 </div>
 </section>
 </section>
-<section id="id14">
-<h2>次のステップ<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id13">
+<h2>次のステップ<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="neulite_build.html"><span class="doc">Neuliteカーネルのビルド</span></a> - Neuliteカーネルのビルド</p></li>
 <li><p><a class="reference internal" href="../tutorials/tutorial01_single_cell.html"><span class="doc">Tutorial 1: 単一細胞の定常電流入力</span></a> - 実践的なチュートリアル</p></li>
 <li><p><a class="reference internal" href="../user_guide/basic_usage.html"><span class="doc">基本的な使い方</span></a> - 詳細な使い方</p></li>
 </ul>
 </section>
-<section id="id15">
-<h2>参考資料<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<section id="id14">
+<h2>参考資料<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.neuron.yale.edu/neuron/">NEURON公式サイト</a></p></li>
 <li><p><a class="reference external" href="https://alleninstitute.github.io/bmtk/installation.html">BMTK Installation Guide</a></p></li>

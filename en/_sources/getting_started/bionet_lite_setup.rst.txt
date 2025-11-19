@@ -62,32 +62,29 @@ bionet_liteは軸索方向推定にPCA（主成分分析）を使用するため
 
    pip install scikit-learn
 
-ステップ4: bionet_liteのダウンロード
--------------------------------------
+ステップ4: neuliteリポジトリのクローン
+--------------------------------------
 
-bionet_liteのパッケージをダウンロードします：
+neuliteリポジトリをクローンします：
 
 .. code-block:: bash
 
-   # Download file from download link
-   wget [bionet_lite download URL]
+   git clone https://github.com/neulite/neulite.git
 
-   # Or use curl
-   curl -L -O [bionet_lite download URL]
+リポジトリには以下が含まれています：
 
+* ``bionetlite/`` - bionet_liteモジュール
+* ``kernel/`` - Neuliteカーネル（デフォルト）
+* ``flavors/`` - カーネルのバリエーション
 
 ステップ5: bionet_liteの配置
 ----------------------------
 
-ダウンロードしたファイルを展開し、 ``bionetlite.py`` をネットワーク構築コードと同じディレクトリに配置します：
+クローンしたリポジトリから ``bionetlite.py`` をネットワーク構築コードと同じディレクトリに配置します：
 
 .. code-block:: bash
 
-   # Extract tarball
-   tar -xzf bionet_lite-X.Y.Z.tar.gz
-
-   # Copy bionetlite.py to working directory
-   cp bionet_lite-X.Y.Z/bionetlite.py /path/to/your/network/code/
+   cp neulite/bionetlite/bionetlite.py /path/to/your/network/code/
 
 **ディレクトリ構成：**
 
