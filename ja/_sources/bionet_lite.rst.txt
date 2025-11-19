@@ -69,10 +69,10 @@ bionetとbionet_liteでは、生成されるファイルが異なります。
    :header-rows: 1
    :widths: 30 35 35
 
-   * - ファイルの種類
-     - bionet（BMTK）
+   * - File Type
+     - bionet (BMTK)
      - bionet_lite
-   * - ネットワークデータ
+   * - Network Data
      - | ``<network>_nodes.h5``
        | ``<network>_node_types.csv``
        | ``<src>_<trg>_edges.h5``
@@ -83,13 +83,13 @@ bionetとbionet_liteでは、生成されるファイルが異なります。
        | ``<src>_<trg>_edge_types.csv``
        | **+** ``<network>_population.csv``
        | **+** ``<src>_<trg>_connection.csv``
-   * - 形態ファイル
-     - 元のSWCファイル（変更なし）
-     - **処理済みSWCファイル** （Perisomatic model変換、DFSソート済み）
-   * - イオンチャネル
-     - JSON形式（``*_fit.json``）
-     - | JSON形式（``*_fit.json``）
-       | **+** CSV形式（Neulite用に変換）
+   * - Morphology Files
+     - Original SWC files (unchanged)
+     - **Processed SWC files** (Perisomatic model conversion, DFS sorted)
+   * - Ion Channels
+     - JSON format (``*_fit.json``)
+     - | JSON format (``*_fit.json``)
+       | **+** CSV format (converted for Neulite)
 
 bionet_liteは、BMTKの標準出力（H5/CSV）を完全に維持しながら、Neulite用の追加ファイル（<network_name>_population.csv、<src>_<trg>_connection.csv）を生成します。これにより、同じネットワークデータで両方のシミュレータを実行できます。
 

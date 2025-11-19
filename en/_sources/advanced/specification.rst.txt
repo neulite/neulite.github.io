@@ -132,39 +132,39 @@ bionet_liteが採用しているPerisomatic modelについては、:ref:`形態�
    :header-rows: 1
    :widths: 40 20 40
 
-   * - 機能
-     - 対応状況
-     - 備考
+   * - Feature
+     - Status
+     - Notes
    * - Biophysical neurons
-     - ✅ 対応
-     - Perisomatic modelのみ
+     - ✅ Supported
+     - Perisomatic model only
    * - Point neurons
-     - ❌ 非対応
+     - ❌ Not Supported
      -
    * - Virtual neurons
-     - ❌ 非対応
+     - ❌ Not Supported
      -
-   * - 定常電流入力
-     - ✅ 対応
+   * - Constant current input
+     - ✅ Supported
      -
-   * - スパイク列入力
-     - ❌ 非対応
-     - Neulite側実装が必要
-   * - exp2synシナプス
-     - ✅ 対応
+   * - Spike train input
+     - ❌ Not Supported
+     - Requires Neulite implementation
+   * - exp2syn synapses
+     - ✅ Supported
      -
-   * - その他のシナプス
-     - ❌ 非対応
+   * - Other synapses
+     - ❌ Not Supported
      -
-   * - 並列実行
-     - ✅ 対応
+   * - Parallel execution
+     - ✅ Supported
      -
-   * - Allen Cell Types Databaseモデル
-     - ✅ 対応
+   * - Allen Cell Types Database models
+     - ✅ Supported
      -
-   * - `SONATA <https://github.com/AllenInstitute/sonata/tree/master>`_ 形式
-     - ✅ 対応
-     - bionet経由
+   * - `SONATA <https://github.com/AllenInstitute/sonata/tree/master>`_ format
+     - ✅ Supported
+     - via bionet
 
 今後の発展
 ==========

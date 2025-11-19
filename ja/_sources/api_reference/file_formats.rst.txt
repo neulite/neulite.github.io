@@ -53,24 +53,24 @@ Neuliteカーネル用のファイルです。
    :header-rows: 1
    :widths: 20 15 65
 
-   * - カラム名
-     - 型
-     - 説明
+   * - Column Name
+     - Type
+     - Description
    * - #n_cell
      - int
-     - このモデルタイプのニューロン数
+     - Number of neurons for this model type
    * - n_comp
      - int
-     - コンパートメント数（SWCファイルの行数）
+     - Number of compartments (number of rows in SWC file)
    * - name
      - string
-     - モデル名（形式: ``<pop_name>_<node_type_id>``）
+     - Model name (format: ``<pop_name>_<node_type_id>``)
    * - swc_file
      - string
-     - 形態ファイルのパス（例: ``data/Scnn1a.swc``）
+     - Path to morphology file (e.g., ``data/Scnn1a.swc``)
    * - ion_file
      - string
-     - イオンチャネル設定ファイルのパス（例: ``data/472363762_fit.csv``）
+     - Path to ion channel configuration file (e.g., ``data/472363762_fit.csv``)
 
 例
 --
@@ -100,36 +100,36 @@ Neuliteカーネル用のファイルです。
    :header-rows: 1
    :widths: 20 15 65
 
-   * - カラム名
-     - 型
-     - 説明
+   * - Column Name
+     - Type
+     - Description
    * - #pre nid
      - int
-     - 送信元ニューロンID（0から始まる）
+     - Presynaptic neuron ID (0-indexed)
    * - post nid
      - int
-     - 受信先ニューロンID（0から始まる）
+     - Postsynaptic neuron ID (0-indexed)
    * - post cid
      - int
-     - 受信先コンパートメントID（SWCファイルのノード番号）
+     - Postsynaptic compartment ID (node number in SWC file)
    * - weight
      - float
-     - シナプス重み
+     - Synaptic weight
    * - tau_decay
      - float
-     - 減衰時定数（ms）、exp2synの ``tau2``
+     - Decay time constant (ms), ``tau2`` of exp2syn
    * - tau_rise
      - float
-     - 立ち上がり時定数（ms）、exp2synの ``tau1``
+     - Rise time constant (ms), ``tau1`` of exp2syn
    * - erev
      - float
-     - 平衡電位（mV）
+     - Reversal potential (mV)
    * - delay
      - int
-     - シナプス遅延（ms、整数に丸められる）
+     - Synaptic delay (ms, rounded to integer)
    * - e/i
      - string
-     - 'e'（興奮性）または'i'（抑制性）
+     - 'e' (excitatory) or 'i' (inhibitory)
 
 .. note::
    * ``post cid`` は ``target_sections`` で指定されたセクションからランダムにサンプリングされます

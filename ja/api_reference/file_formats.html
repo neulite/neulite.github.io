@@ -582,31 +582,31 @@
 <col style="width: 65.0%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>カラム名</p></th>
-<th class="head"><p>型</p></th>
-<th class="head"><p>説明</p></th>
+<tr class="row-odd"><th class="head"><p>Column Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>#n_cell</p></td>
 <td><p>int</p></td>
-<td><p>このモデルタイプのニューロン数</p></td>
+<td><p>Number of neurons for this model type</p></td>
 </tr>
 <tr class="row-odd"><td><p>n_comp</p></td>
 <td><p>int</p></td>
-<td><p>コンパートメント数（SWCファイルの行数）</p></td>
+<td><p>Number of compartments (number of rows in SWC file)</p></td>
 </tr>
 <tr class="row-even"><td><p>name</p></td>
 <td><p>string</p></td>
-<td><p>モデル名（形式: <code class="docutils literal notranslate"><span class="pre">&lt;pop_name&gt;_&lt;node_type_id&gt;</span></code>）</p></td>
+<td><p>Model name (format: <code class="docutils literal notranslate"><span class="pre">&lt;pop_name&gt;_&lt;node_type_id&gt;</span></code>)</p></td>
 </tr>
 <tr class="row-odd"><td><p>swc_file</p></td>
 <td><p>string</p></td>
-<td><p>形態ファイルのパス（例: <code class="docutils literal notranslate"><span class="pre">data/Scnn1a.swc</span></code>）</p></td>
+<td><p>Path to morphology file (e.g., <code class="docutils literal notranslate"><span class="pre">data/Scnn1a.swc</span></code>)</p></td>
 </tr>
 <tr class="row-even"><td><p>ion_file</p></td>
 <td><p>string</p></td>
-<td><p>イオンチャネル設定ファイルのパス（例: <code class="docutils literal notranslate"><span class="pre">data/472363762_fit.csv</span></code>）</p></td>
+<td><p>Path to ion channel configuration file (e.g., <code class="docutils literal notranslate"><span class="pre">data/472363762_fit.csv</span></code>)</p></td>
 </tr>
 </tbody>
 </table>
@@ -638,47 +638,47 @@
 <col style="width: 65.0%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>カラム名</p></th>
-<th class="head"><p>型</p></th>
-<th class="head"><p>説明</p></th>
+<tr class="row-odd"><th class="head"><p>Column Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>#pre nid</p></td>
 <td><p>int</p></td>
-<td><p>送信元ニューロンID（0から始まる）</p></td>
+<td><p>Presynaptic neuron ID (0-indexed)</p></td>
 </tr>
 <tr class="row-odd"><td><p>post nid</p></td>
 <td><p>int</p></td>
-<td><p>受信先ニューロンID（0から始まる）</p></td>
+<td><p>Postsynaptic neuron ID (0-indexed)</p></td>
 </tr>
 <tr class="row-even"><td><p>post cid</p></td>
 <td><p>int</p></td>
-<td><p>受信先コンパートメントID（SWCファイルのノード番号）</p></td>
+<td><p>Postsynaptic compartment ID (node number in SWC file)</p></td>
 </tr>
 <tr class="row-odd"><td><p>weight</p></td>
 <td><p>float</p></td>
-<td><p>シナプス重み</p></td>
+<td><p>Synaptic weight</p></td>
 </tr>
 <tr class="row-even"><td><p>tau_decay</p></td>
 <td><p>float</p></td>
-<td><p>減衰時定数（ms）、exp2synの <code class="docutils literal notranslate"><span class="pre">tau2</span></code></p></td>
+<td><p>Decay time constant (ms), <code class="docutils literal notranslate"><span class="pre">tau2</span></code> of exp2syn</p></td>
 </tr>
 <tr class="row-odd"><td><p>tau_rise</p></td>
 <td><p>float</p></td>
-<td><p>立ち上がり時定数（ms）、exp2synの <code class="docutils literal notranslate"><span class="pre">tau1</span></code></p></td>
+<td><p>Rise time constant (ms), <code class="docutils literal notranslate"><span class="pre">tau1</span></code> of exp2syn</p></td>
 </tr>
 <tr class="row-even"><td><p>erev</p></td>
 <td><p>float</p></td>
-<td><p>平衡電位（mV）</p></td>
+<td><p>Reversal potential (mV)</p></td>
 </tr>
 <tr class="row-odd"><td><p>delay</p></td>
 <td><p>int</p></td>
-<td><p>シナプス遅延（ms、整数に丸められる）</p></td>
+<td><p>Synaptic delay (ms, rounded to integer)</p></td>
 </tr>
 <tr class="row-even"><td><p>e/i</p></td>
 <td><p>string</p></td>
-<td><p>'e'（興奮性）または'i'（抑制性）</p></td>
+<td><p>'e' (excitatory) or 'i' (inhibitory)</p></td>
 </tr>
 </tbody>
 </table>

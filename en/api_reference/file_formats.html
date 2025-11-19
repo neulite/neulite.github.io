@@ -593,7 +593,7 @@
 </tr>
 <tr class="row-odd"><td><p>n_comp</p></td>
 <td><p>int</p></td>
-<td><p>Number of compartments (number of lines in SWC file)</p></td>
+<td><p>Number of compartments (number of rows in SWC file)</p></td>
 </tr>
 <tr class="row-even"><td><p>name</p></td>
 <td><p>string</p></td>
@@ -645,15 +645,15 @@
 <tbody>
 <tr class="row-even"><td><p>#pre nid</p></td>
 <td><p>int</p></td>
-<td><p>Source neuron ID (0-based)</p></td>
+<td><p>Presynaptic neuron ID (0-indexed)</p></td>
 </tr>
 <tr class="row-odd"><td><p>post nid</p></td>
 <td><p>int</p></td>
-<td><p>Target neuron ID (0-based)</p></td>
+<td><p>Postsynaptic neuron ID (0-indexed)</p></td>
 </tr>
 <tr class="row-even"><td><p>post cid</p></td>
 <td><p>int</p></td>
-<td><p>Target compartment ID (node number in SWC file)</p></td>
+<td><p>Postsynaptic compartment ID (node number in SWC file)</p></td>
 </tr>
 <tr class="row-odd"><td><p>weight</p></td>
 <td><p>float</p></td>
@@ -661,15 +661,15 @@
 </tr>
 <tr class="row-even"><td><p>tau_decay</p></td>
 <td><p>float</p></td>
-<td><p>Decay time constant (ms), exp2syn’s <code class="docutils literal notranslate"><span class="pre">tau2</span></code></p></td>
+<td><p>Decay time constant (ms), <code class="docutils literal notranslate"><span class="pre">tau2</span></code> of exp2syn</p></td>
 </tr>
 <tr class="row-odd"><td><p>tau_rise</p></td>
 <td><p>float</p></td>
-<td><p>Rise time constant (ms), exp2syn’s <code class="docutils literal notranslate"><span class="pre">tau1</span></code></p></td>
+<td><p>Rise time constant (ms), <code class="docutils literal notranslate"><span class="pre">tau1</span></code> of exp2syn</p></td>
 </tr>
 <tr class="row-even"><td><p>erev</p></td>
 <td><p>float</p></td>
-<td><p>Equilibrium potential (mV)</p></td>
+<td><p>Reversal potential (mV)</p></td>
 </tr>
 <tr class="row-odd"><td><p>delay</p></td>
 <td><p>int</p></td>

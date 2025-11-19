@@ -570,7 +570,7 @@
 <p>Perisomatic model is a type of biophysical neuron model used in <a class="reference external" href="https://celltypes.brain-map.org/">Allen Cell Types Database</a>. This model has the following characteristics:</p>
 <p><strong>Definition and Structure:</strong></p>
 <ul class="simple">
-<li><p><strong>イオンチャネルの配置</strong>: 主要なイオンチャネルは細胞体周辺に配置されます</p></li>
+<li><p><strong>Ion channel placement</strong>: Major ion channels are placed around the cell body (soma)</p></li>
 <li><p><strong>Detailed morphology</strong>: Uses morphological data reconstructed from actual neurons</p></li>
 <li><p><strong>Simplified axon</strong>: An artificial simplified axon is given instead of the actual axon morphology</p></li>
 </ul>
@@ -622,8 +622,8 @@
 <p>Current bionet_lite <strong>randomly determines</strong> the positions of connections that match the rules set during network construction.</p>
 <p>Therefore:</p>
 <ul class="simple">
-<li><p>❌ bionetと全く同じシナプス接続を取得することは現在できません</p></li>
-<li><p>✅ 一度生成したNeulite用のbionet_liteによる出力は、本来シミュレーション実行時に決める詳細な位置情報を含み、確実に同じネットワークに対してシミュレーションを実行可能</p></li>
+<li><p>❌ Currently cannot obtain exactly the same synaptic connections as bionet</p></li>
+<li><p>✅ The output from bionet_lite for Neulite generated once includes the detailed position information that would normally be determined at simulation runtime, and can reliably execute simulations on the same network</p></li>
 </ul>
 </section>
 <section id="id15">
@@ -651,7 +651,7 @@
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Feature</p></th>
-<th class="head"><p>Support Status</p></th>
+<th class="head"><p>Status</p></th>
 <th class="head"><p>Notes</p></th>
 </tr>
 </thead>
@@ -661,11 +661,11 @@
 <td><p>Perisomatic model only</p></td>
 </tr>
 <tr class="row-odd"><td><p>Point neurons</p></td>
-<td><p>❌ Not supported</p></td>
+<td><p>❌ Not Supported</p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>Virtual neurons</p></td>
-<td><p>❌ Not supported</p></td>
+<td><p>❌ Not Supported</p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>Constant current input</p></td>
@@ -673,15 +673,15 @@
 <td></td>
 </tr>
 <tr class="row-even"><td><p>Spike train input</p></td>
-<td><p>❌ Not supported</p></td>
-<td><p>Implementation on Neulite side required</p></td>
+<td><p>❌ Not Supported</p></td>
+<td><p>Requires Neulite implementation</p></td>
 </tr>
-<tr class="row-odd"><td><p>exp2syn synapse</p></td>
+<tr class="row-odd"><td><p>exp2syn synapses</p></td>
 <td><p>✅ Supported</p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>Other synapses</p></td>
-<td><p>❌ Not supported</p></td>
+<td><p>❌ Not Supported</p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>Parallel execution</p></td>
@@ -694,7 +694,7 @@
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://github.com/AllenInstitute/sonata/tree/master">SONATA</a> format</p></td>
 <td><p>✅ Supported</p></td>
-<td><p>Via bionet</p></td>
+<td><p>via bionet</p></td>
 </tr>
 </tbody>
 </table>
