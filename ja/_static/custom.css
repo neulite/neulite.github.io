@@ -1,0 +1,37 @@
+/* 言語切り替えのスタイル改善 */
+.language-switcher {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.language-switcher a {
+    color: #2980b9 !important;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.language-switcher a:hover {
+    background-color: #e7f2fa;
+    color: #2c3e50 !important;
+}
+
+.language-switcher a.current {
+    background-color: #2980b9;
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+/* 選択されていない言語のコントラストを改善 */
+.language-switcher a:not(.current) {
+    color: #404040 !important;
+    font-weight: 500;
+    border: 1px solid #d0d0d0;
+}
+
+.language-switcher a:not(.current):hover {
+    border-color: #2980b9;
+    color: #2980b9 !important;
+}
