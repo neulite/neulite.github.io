@@ -13,11 +13,6 @@ Tutorial 2: スパイク入力シミュレーション
 前提条件: BMTKチュートリアルの実行
 ==================================
 
-.. important::
-   **このチュートリアルを始める前に、必ずBMTKの対応するチュートリアルを先に実行してください**
-
-   BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionet_liteの実行には、BMTKのコード・データファイルが必要です。
-
 **実行手順：**
 
 1. **BMTKチュートリアルを実行**
@@ -26,9 +21,16 @@ Tutorial 2: スパイク入力シミュレーション
 
    `Tutorial: Single Cell Simulation with External Feedforward Input (with BioNet) <https://alleninstitute.github.io/bmtk/tutorials/tutorial_02_single_cell_syn.html>`_
 
+
 2. **bionet_liteのコード例を実行**
 
    BMTKチュートリアルが完了したら、次のセクションに進んでください。
+
+
+.. important::
+   **このチュートリアルを始める前に、必ずBMTKの対応するチュートリアルを先に実行してください**
+
+   BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionet_liteの実行には、BMTKのコード・データファイルが必要です。
 
 BMTKからbionet_liteへの変更
 ==============================

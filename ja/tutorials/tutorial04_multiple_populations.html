@@ -546,11 +546,6 @@
 </section>
 <section id="bmtk">
 <h2>前提条件: BMTKチュートリアルの実行<a class="headerlink" href="#bmtk" title="Link to this heading"></a></h2>
-<div class="admonition important">
-<p class="admonition-title">重要</p>
-<p><strong>このチュートリアルを始める前に、必ずBMTKの対応するチュートリアルを先に実行してください</strong></p>
-<p>BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionet_liteの実行には、BMTKのコード・データファイルが必要です。</p>
-</div>
 <p><strong>実行手順：</strong></p>
 <ol class="arabic">
 <li><p><strong>BMTKチュートリアルを実行</strong></p>
@@ -561,6 +556,11 @@
 <p>BMTKチュートリアルが完了したら、次のセクションに進んでください。</p>
 </li>
 </ol>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p><strong>このチュートリアルを始める前に、必ずBMTKの対応するチュートリアルを先に実行してください</strong></p>
+<p>BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionet_liteの実行には、BMTKのコード・データファイルが必要です。</p>
+</div>
 </section>
 <section id="bionetbionet-lite">
 <h2>bionetからbionet_liteへの変更<a class="headerlink" href="#bionetbionet-lite" title="Link to this heading"></a></h2>
@@ -686,6 +686,12 @@ config.hをコピーした後、カーネルを再ビルドしてください。
 <span class="c1"># Run Neulite kernel</span>
 ./nl<span class="w"> </span>V1_population.csv<span class="w"> </span>V1_V1_connection.csv
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><strong>外部ファイルからの入力について</strong></p>
+<p>Neuliteは現在、BMTKのチュートリアルで行われている外部ファイルからのスパイク入力をサポートしていません。そのため、このチュートリアルで生成されたファイルを用いたシミュレーションでは、外部入力がなくスパイクが発生しません。</p>
+<p>ネットワークの動作を確認するには、config.hで定常電流入力（I_AMP、I_DELAY、I_DURATION）を設定してください。</p>
 </div>
 </section>
 <section id="id7">

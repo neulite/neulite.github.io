@@ -545,11 +545,6 @@
 </section>
 <section id="bmtk">
 <h2>Prerequisites: Running the BMTK Tutorial<a class="headerlink" href="#bmtk" title="Link to this heading"></a></h2>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p><strong>Before starting this tutorial, you must first run the corresponding BMTK tutorial</strong></p>
-<p>Running the BMTK tutorial will automatically download the necessary data files (SWC files, JSON files, etc.). The execution of bionet_lite requires BMTK code and data files.</p>
-</div>
 <p><strong>Execution Steps:</strong></p>
 <ol class="arabic">
 <li><p><strong>Run the BMTK Tutorial</strong></p>
@@ -560,6 +555,11 @@
 <p>Once the BMTK tutorial is complete, proceed to the next section.</p>
 </li>
 </ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Before starting this tutorial, you must first run the corresponding BMTK tutorial</strong></p>
+<p>Running the BMTK tutorial will automatically download the necessary data files (SWC files, JSON files, etc.). The execution of bionet_lite requires BMTK code and data files.</p>
+</div>
 </section>
 <section id="bionetbionet-lite">
 <h2>Changes from BMTK to bionet_lite<a class="headerlink" href="#bionetbionet-lite" title="Link to this heading"></a></h2>
@@ -683,6 +683,12 @@ cp<span class="w"> </span>-r<span class="w"> </span>neulite/*<span class="w"> </
 <span class="c1"># Run Neulite kernel</span>
 ./nl<span class="w"> </span>V1_population.csv<span class="w"> </span>V1_V1_connection.csv
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>About External File Input</strong></p>
+<p>Neulite currently does not support spike input from external files as performed in BMTK tutorials. Therefore, simulations using the files generated in this tutorial will not produce spikes due to the absence of external input.</p>
+<p>To verify network behavior, please configure constant current injection (I_AMP, I_DELAY, I_DURATION) in config.h.</p>
 </div>
 </section>
 <section id="id7">
