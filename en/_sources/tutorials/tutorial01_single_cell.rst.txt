@@ -128,7 +128,7 @@ bionet_liteは以下のディレクトリ内にファイルを生成します：
 
 .. code-block:: text
 
-   sim_ch01_nl/  (または neulite/)
+   sim_ch01_nl/ 
    ├── mcortex_population.csv
    ├── mcortex_mcortex_connection.csv
    ├── kernel/
