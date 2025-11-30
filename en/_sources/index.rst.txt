@@ -16,7 +16,7 @@ Neuliteプロジェクトは、スーパーコンピュータ「`富岳 <https:/
 
    <div style="margin-bottom: 30px;"></div>
 
-このドキュメントでは、生物物理学的ニューロンモデルのための高性能シミュレーション環境である **Neulite** と、そのフロントエンドである **bionet_lite** について説明します。
+このドキュメントでは、生物物理学的ニューロンモデルのための高性能シミュレーション環境である **Neulite** と、そのフロントエンドである **bionetlite** について説明します。
 
 .. attention::
    このドキュメントは継続的に更新されています。今後もセクションの追加や内容の充実を予定しています。
@@ -51,7 +51,7 @@ Neuliteは、`Brain Modeling Toolkit (BMTK) <https://github.com/AllenInstitute/b
    <div style="margin-bottom: 30px;"></div>
 
 
-**Bionet_lite（フロントエンド）**
+**Bionetlite（フロントエンド）**
    `Brain Modeling Toolkit (BMTK) <https://github.com/AllenInstitute/bmtk>`_ のbionetモジュールを拡張したPythonパッケージ。既存のBMTKコードを少量の変更で利用可能。
 
 **Neuliteカーネル（シミュレータ）**
@@ -63,7 +63,7 @@ Neuliteは、`Brain Modeling Toolkit (BMTK) <https://github.com/AllenInstitute/b
 
 .. code-block:: python
 
-   # Import bionet_lite instead of bionet
+   # Import bionetlite instead of bionet
    from bionetlite import NeuliteBuilder as NetworkBuilder
 
    # Use it the same way as regular bionet
@@ -84,7 +84,7 @@ Neuliteは、`Brain Modeling Toolkit (BMTK) <https://github.com/AllenInstitute/b
    :caption: はじめに
 
    overview
-   bionet_lite
+   bionetlite
    neulite
    getting_started/index
 

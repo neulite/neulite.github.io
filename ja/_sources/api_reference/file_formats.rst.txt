@@ -2,12 +2,12 @@
 ファイル形式
 ==============
 
-bionet_liteが生成するファイルの形式について説明します。
+bionetliteが生成するファイルの形式について説明します。
 
 概要
 ====
 
-bionet_liteは、以下の2種類のファイルを生成します：
+bionetliteは、以下の2種類のファイルを生成します：
 
 1. `SONATA <https://github.com/AllenInstitute/sonata/tree/master>`_ 形式: BMTKと互換性のあるHDF5形式
 2. Neulite形式: Neuliteカーネルが読み込むCSV形式
@@ -153,7 +153,7 @@ Neulite用に前処理されたニューロン形態ファイルです。
 処理内容
 --------
 
-bionet_liteは以下の処理を行います：
+bionetliteは以下の処理を行います：
 
 1. **ゼロベースインデックスへの変換** - 1ベースを0ベースに変換
 2. **軸索の修正** - `Perisomatic model <https://brain-map.org/our-research/computational-modeling/perisomatic-biophysical-single-neuron-models>`_ への変換（簡略化された人工軸索を追加）
@@ -260,7 +260,7 @@ Neuliteカーネル用の設定ヘッダーファイルです。
 ディレクトリ構造
 ================
 
-bionet_liteは以下のディレクトリ構造を生成します：
+bionetliteは以下のディレクトリ構造を生成します：
 
 .. code-block:: text
 

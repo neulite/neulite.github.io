@@ -8,7 +8,7 @@ Tutorial 3: 単一ポピュレーションネットワーク
 このチュートリアルでは、複数のニューロンからなる単一ポピュレーションのシミュレーションを行います。
 
 .. warning::
-   bionet_liteは現在、外部かファイルを用いたスパイク入力には対応していません。このチュートリアルでは、生物物理学的ニューロンのポピュレーションファイル・シナプス接続情報ファイルが生成されることを確認します。
+   bionetliteは現在、外部かファイルを用いたスパイク入力には対応していません。このチュートリアルでは、生物物理学的ニューロンのポピュレーションファイル・シナプス接続情報ファイルが生成されることを確認します。
 
 
 前提条件: BMTKチュートリアルの実行
@@ -23,7 +23,7 @@ Tutorial 3: 単一ポピュレーションネットワーク
    `Tutorial: Multi-Cell, Single Population Network (with BioNet) <https://alleninstitute.github.io/bmtk/tutorials/tutorial_03_single_pop.html>`_
 
 
-2. **bionet_liteのコード例を実行**
+2. **bionetliteのコード例を実行**
 
    BMTKチュートリアルが完了したら、次のセクションに進んでください。
 
@@ -31,10 +31,10 @@ Tutorial 3: 単一ポピュレーションネットワーク
 .. important::
    **このチュートリアルを始める前に、必ずBMTKの対応するチュートリアルを先に実行してください**
 
-   BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionet_liteの実行には、BMTKのコード・データファイルが必要です。
+   BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionetliteの実行には、BMTKのコード・データファイルが必要です。
 
 
-BMTKからbionet_liteへの変更
+BMTKからbionetliteへの変更
 ==============================
 
 **変更が必要なのはimport文だけです。** それ以外のコードは完全に同じです。
@@ -45,7 +45,7 @@ BMTKからbionet_liteへの変更
 
    from bmtk.builder.networks import NetworkBuilder
 
-**変更後（bionet_lite）:**
+**変更後（bionetlite）:**
 
 .. code-block:: python
 
@@ -54,7 +54,7 @@ BMTKからbionet_liteへの変更
 生成されるファイル
 ==================
 
-bionet_liteは以下のディレクトリ内にファイルを生成します：
+bionetliteは以下のディレクトリ内にファイルを生成します：
 
 * スクリプトに ``base_dir`` が設定されている場合: ``{base_dir}_nl/``
 * ``base_dir`` が設定されていない場合: ``neulite/``
@@ -91,7 +91,7 @@ mcortex_population.csv
 mcortex_mcortex_connection.csv
 -------------------------------
 
-シナプス接続情報が含まれます。bionet_liteは、bionetが定義した接続ルールを適用し、具体的な接続位置（post cid）を決定します。
+シナプス接続情報が含まれます。bionetliteは、bionetが定義した接続ルールを適用し、具体的な接続位置（post cid）を決定します。
 
 .. code-block:: text
 
@@ -113,7 +113,7 @@ mcortex_mcortex_connection.csv
 仕様
 ----------
 
-bionet_liteは、save_edges()が呼ばれたタイミングでシナプス接続位置を決定します。これは通常bionet.simulatorが実行時に行う処理です。事前に定められた接続ルールに従うコンパートメントからランダムに接続を作成します。
+bionetliteは、save_edges()が呼ばれたタイミングでシナプス接続位置を決定します。これは通常bionet.simulatorが実行時に行う処理です。事前に定められた接続ルールに従うコンパートメントからランダムに接続を作成します。
 
 
 次のステップ

@@ -19,7 +19,7 @@ Neuliteカーネルのビルド
 --------------------------------------
 
 .. note::
-   bionet_liteセットアップ時に既にクローン済みの場合は、このステップをスキップしてください。
+   bionetliteセットアップ時に既にクローン済みの場合は、このステップをスキップしてください。
 
 neuliteリポジトリをクローンします：
 
@@ -51,7 +51,7 @@ Makefileを使用してビルドします：
 ステップ4: 実行
 ---------------
 
-ビルドされた ``nl`` を実行します。引数としてBionet_liteが生成したポピュレーションファイル（例：``<network_name>_population.csv`` ）シナプス接続ファイル（ 例：``<src>_<trg>_connection.csv`` ）を指定します：
+ビルドされた ``nl`` を実行します。引数としてBionetliteが生成したポピュレーションファイル（例：``<network_name>_population.csv`` ）シナプス接続ファイル（ 例：``<src>_<trg>_connection.csv`` ）を指定します：
 
 .. code-block:: bash
 

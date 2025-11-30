@@ -2,7 +2,7 @@
 Publication
 ============
 
-このページでは、Neuliteとbionet_liteに関する主要な論文を紹介します。
+このページでは、Neuliteとbionetliteに関する主要な論文を紹介します。
 
 主要論文
 ========
@@ -31,6 +31,6 @@ DOI: `10.1145/3712285.3759819 <https://doi.org/10.1145/3712285.3759819>`_
 技術的貢献
 ----------
 
-* **bionet_lite**: BMTKを拡張したネットワーク構築フレームワーク
+* **bionetlite**: BMTKを拡張したネットワーク構築フレームワーク
 * **Neulite**: 軽量で高性能な生物物理学的ニューロンシミュレータ
 * **最適化技術**: SVE（Scalable Vector Extensions）を活用したSIMD計算

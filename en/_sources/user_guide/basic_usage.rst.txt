@@ -2,16 +2,16 @@
 基本的な使い方
 ====================
 
-bionet_liteを使用したネットワーク構築
+bionetliteを使用したネットワーク構築
 =====================================
 
 .. note::
-   bionet_liteの使用にはBMTKのコード・データが必要です。多くの場合、既存のBMTKコードを再利用できます。
+   bionetliteの使用にはBMTKのコード・データが必要です。多くの場合、既存のBMTKコードを再利用できます。
 
 NeuliteBuilderの初期化
 -----------------------
 
-bionet_liteは、既存のBMTKコードでNeuliteBuilderをインポートするだけで利用可能です：
+bionetliteは、既存のBMTKコードでNeuliteBuilderをインポートするだけで利用可能です：
 
 .. code-block:: python
 
@@ -54,7 +54,7 @@ bionet_liteは、既存のBMTKコードでNeuliteBuilderをインポートする
 サポートされているモデルタイプ
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-現在、Bionet_liteならびにNeuliteは生物物理学的ニューロンのみに対応しています。Point neuronやVirtual cellは自動的に出力から除外されます。
+現在、BionetliteならびにNeuliteは生物物理学的ニューロンのみに対応しています。Point neuronやVirtual cellは自動的に出力から除外されます。
 
 * ✅ ``biophysical``: 形状を持つ生物物理学的ニューロン
 * ❌ ``point_neuron``: ポイントニューロン（LIFなど）- 非対応
@@ -81,7 +81,7 @@ bionet_liteは、既存のBMTKコードでNeuliteBuilderをインポートする
 サポートされているシナプスモデル
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-現在、bionet_liteは以下のシナプスモデルに対応しています：
+現在、bionetliteは以下のシナプスモデルに対応しています：
 
 * ✅ ``exp2syn``: Double exponential synapse
 * ❌ その他のシナプスモデル - 非対応
@@ -106,9 +106,9 @@ bionet_liteは、既存のBMTKコードでNeuliteBuilderをインポートする
 実行の流れ
 ==========
 
-bionet_liteの実行フローは以下の通りです：
+bionetliteの実行フローは以下の通りです：
 
-1. **NeuliteBuilderのインポート**: bionetの代わりにbionet_liteをインポート
+1. **NeuliteBuilderのインポート**: bionetの代わりにbionetliteをインポート
 2. **ネットワークの定義**: bionetと同じ方法でノードとエッジを定義
 3. **ビルド**: ``net.build()`` でネットワークを構築
 4. **保存**: ``save_nodes()`` と ``save_edges()`` でファイルを生成
@@ -118,7 +118,7 @@ bionet_liteの実行フローは以下の通りです：
 制限事項
 --------
 
-bionet_liteは以下の機能に対応していません：
+bionetliteは以下の機能に対応していません：
 
 * Point neuron (LIF, etc.)
 * Virtual neuron

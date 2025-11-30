@@ -19,7 +19,7 @@ Tutorial 4: 複数のポピュレーションからなるネットワーク
 
    `Tutorial: Multi-Population Recurrent Network (with BioNet) <https://alleninstitute.github.io/bmtk/tutorials/tutorial_04_multi_pop.html>`_
 
-2. **bionet_liteのコード例を実行**
+2. **bionetliteのコード例を実行**
 
    BMTKチュートリアルが完了したら、次のセクションに進んでください。
 
@@ -27,9 +27,9 @@ Tutorial 4: 複数のポピュレーションからなるネットワーク
 .. important::
    **このチュートリアルを始める前に、必ずBMTKの対応するチュートリアルを先に実行してください**
 
-   BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionet_liteの実行には、BMTKのコード・データファイルが必要です。
+   BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionetliteの実行には、BMTKのコード・データファイルが必要です。
 
-bionetからbionet_liteへの変更
+bionetからbionetliteへの変更
 ==============================
 
 **変更が必要なのはimport文だけです。** それ以外のコードは完全に同一です。
@@ -40,7 +40,7 @@ bionetからbionet_liteへの変更
 
    from bmtk.builder.networks import NetworkBuilder
 
-**変更後（bionet_lite）:**
+**変更後（bionetlite）:**
 
 .. code-block:: python
 
@@ -64,7 +64,7 @@ connection.csv
 Neuliteが生成するファイル
 =========================
 
-bionet_liteは以下のディレクトリ内にファイルを生成します：
+bionetliteは以下のディレクトリ内にファイルを生成します：
 
 **ディレクトリ構造**
 
@@ -131,7 +131,7 @@ Neuliteカーネルのビルドと実行
 ステップ1: config.hの設置とカーネルのビルド
 -------------------------------------------
 
-bionet_liteが生成した ``config.h`` をカーネルディレクトリにコピーし、ビルドします：
+bionetliteが生成した ``config.h`` をカーネルディレクトリにコピーし、ビルドします：
 
 .. code-block:: bash
 
@@ -142,7 +142,7 @@ bionet_liteが生成した ``config.h`` をカーネルディレクトリにコ�
 ステップ2: バイナリのコピー
 ---------------------------
 
-ビルドしたバイナリファイル ``nl`` をbionet_liteが生成したディレクトリにコピーします：
+ビルドしたバイナリファイル ``nl`` をbionetliteが生成したディレクトリにコピーします：
 
 .. code-block:: bash
 
@@ -151,7 +151,7 @@ bionet_liteが生成した ``config.h`` をカーネルディレクトリにコ�
 ステップ3: シミュレーションの実行
 ---------------------------------
 
-bionet_liteが生成したディレクトリに移動して、シミュレーションを実行します：
+bionetliteが生成したディレクトリに移動して、シミュレーションを実行します：
 
 .. code-block:: bash
 
@@ -208,9 +208,9 @@ LIFモデルとの混在について
 =========================
 
 .. note::
-   Tutorial 4には元々LIFモデルのニューロンも含まれますが、bionet_liteならびにNeuliteは現在biophysicalニューロンのみに対応しています。
+   Tutorial 4には元々LIFモデルのニューロンも含まれますが、bionetliteならびにNeuliteは現在biophysicalニューロンのみに対応しています。
 
-   bionet_liteは以下のニューロンタイプに対応しています：
+   bionetliteは以下のニューロンタイプに対応しています：
 
    * ✅ biophysical neurons
    * ❌ point neurons (LIFなど)

@@ -1,8 +1,8 @@
 ============================
-bionet_liteのセットアップ
+bionetliteのセットアップ
 ============================
 
-このページでは、ネットワーク構築用のPythonパッケージである **bionet_lite** のセットアップ手順を説明します。
+このページでは、ネットワーク構築用のPythonパッケージである **bionetlite** のセットアップ手順を説明します。
 
 前提条件
 ========
@@ -31,7 +31,7 @@ Python仮想環境の作成を推奨します：
 ステップ2: BMTKとNEURONのインストール
 --------------------------------------
 
-bionet_liteは`Brain Modeling Toolkit (BMTK) <https://alleninstitute.github.io/bmtk/>`__と `NEURON <https://www.neuron.yale.edu/neuron/>`_ に依存しています。
+bionetliteは`Brain Modeling Toolkit (BMTK) <https://alleninstitute.github.io/bmtk/>`__と `NEURON <https://www.neuron.yale.edu/neuron/>`_ に依存しています。
 
 **BMTKのインストール:**
 
@@ -56,7 +56,7 @@ NEURON（生物物理学的ニューロンシミュレータ）をインスト�
 
 **scikit-learnのインストール:**
 
-bionet_liteは軸索方向推定にPCA（主成分分析）を使用するため、scikit-learnが必要です：
+bionetliteは軸索方向推定にPCA（主成分分析）を使用するため、scikit-learnが必要です：
 
 .. code-block:: bash
 
@@ -73,11 +73,11 @@ neuliteリポジトリをクローンします：
 
 リポジトリには以下が含まれています：
 
-* ``bionetlite/`` - bionet_liteモジュール
+* ``bionetlite/`` - bionetliteモジュール
 * ``kernel/`` - Neuliteカーネル（デフォルト）
 * ``flavors/`` - カーネルのバリエーション
 
-ステップ5: bionet_liteの配置
+ステップ5: bionetliteの配置
 ----------------------------
 
 クローンしたリポジトリから ``bionetlite.py`` をネットワーク構築コードと同じディレクトリに配置します：
@@ -128,14 +128,14 @@ neuliteリポジトリをクローンします：
    python
 
    >>> from bionetlite import NeuliteBuilder
-   >>> print("bionet_lite is ready to use!")
+   >>> print("bionetlite is ready to use!")
 
 エラーが表示されなければ、セットアップは成功です。
 
 基本的な使い方
 ==============
 
-既存のbionetコードをbionet_liteに変換するのは非常に簡単です。import文を変更するだけで、残りのコードはそのまま使用できます。
+既存のbionetコードをbionetliteに変換するのは非常に簡単です。import文を変更するだけで、残りのコードはそのまま使用できます。
 
 importの変更
 ------------
@@ -146,7 +146,7 @@ importの変更
 
    from bmtk.builder.networks import NetworkBuilder
 
-**変更後（bionet_lite）:**
+**変更後（bionetlite）:**
 
 .. code-block:: python
 
@@ -182,7 +182,7 @@ importの変更
 出力ファイルの確認
 ------------------
 
-bionet_liteは、``neulite/`` ディレクトリ内にNeulite用のファイルを生成します：
+bionetliteは、``neulite/`` ディレクトリ内にNeulite用のファイルを生成します：
 
 **ディレクトリ構造**
 
@@ -246,10 +246,10 @@ NeuliteBuilderは、以下のオプションパラメータを受け取ること
 依存パッケージの詳細
 ====================
 
-bionet_liteの主要な依存パッケージ
+bionetliteの主要な依存パッケージ
 ----------------------------------
 
-bionet_liteは以下のPythonパッケージに依存しています：
+bionetliteは以下のPythonパッケージに依存しています：
 
 .. code-block:: text
 

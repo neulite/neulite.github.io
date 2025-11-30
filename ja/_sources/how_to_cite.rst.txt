@@ -2,7 +2,7 @@
 How to Cite
 ============
 
-bionet_liteとNeuliteを研究で使用する場合は、以下の論文を引用してください。
+bionetliteとNeuliteを研究で使用する場合は、以下の論文を引用してください。
 
 BibTeX
 ======

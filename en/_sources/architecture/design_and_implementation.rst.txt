@@ -2,7 +2,7 @@
 設計と実装
 ========================
 
-このページでは、BMTKとBioNetの背景、およびbionet_liteの設計思想と実装の詳細について説明します。
+このページでは、BMTKとBioNetの背景、およびbionetliteの設計思想と実装の詳細について説明します。
 
 BMTKについて
 ============
@@ -77,22 +77,22 @@ BioNet Simulator
 
 bionet builderが生成したファイルを読み込み、`NEURON <https://www.neuron.yale.edu/>`_ シミュレータを用いてシミュレーションを実行します。
 
-bionet_liteの設計
+bionetliteの設計
 =================
 
-bionet_liteは、bionetの拡張として設計されています。既存コードの最低限の変更で、Neuliteカーネル用のファイルを生成します。
+bionetliteは、bionetの拡張として設計されています。既存コードの最低限の変更で、Neuliteカーネル用のファイルを生成します。
 
 NetworkBuilderのオーバーライド
 ------------------------------
 
-bionet_liteは、bmtk.builder.networksのNetworkBuilderを拡張します：
+bionetliteは、bmtk.builder.networksのNetworkBuilderを拡張します：
 
 .. code-block:: python
 
    # bionet case
    from bmtk.builder.networks import NetworkBuilder
 
-   # bionet_lite case
+   # bionetlite case
    from bionetlite import NeuliteBuilder as NetworkBuilder
 
 このシンプルなimportの変更により、以下が実現されます：
@@ -104,9 +104,9 @@ bionet_liteは、bmtk.builder.networksのNetworkBuilderを拡張します：
 処理フロー
 ==========
 
-bionet_liteの処理フロー：
+bionetliteの処理フロー：
 
-.. image:: ../_static/767369966-bionet_lite_flow.png
+.. image:: ../_static/767369966-bionetlite_flow.png
    :width: 700px
    :align: center
 
@@ -122,7 +122,7 @@ bionet_liteの処理フロー：
 並列実行のサポート
 ==================
 
-bionet_liteは、MPI並列実行をサポートしています：
+bionetliteは、MPI並列実行をサポートしています：
 
 .. code-block:: bash
 

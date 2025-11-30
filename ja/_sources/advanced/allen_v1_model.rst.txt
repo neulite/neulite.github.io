@@ -5,12 +5,12 @@ Allen V1 Model: 大規模ネットワーク
 概要
 ====
 
-このチュートリアルでは、マウス一次視覚野カラムモデルをbionet_liteで構築する実例を示します。これは実際の研究で使用される大規模な生物物理学的モデルです。
+このチュートリアルでは、マウス一次視覚野カラムモデルをbionetliteで構築する実例を示します。これは実際の研究で使用される大規模な生物物理学的モデルです。
 
 目的
 ====
 
-* 実際の研究モデルでのbionet_liteの使用方法を学ぶ
+* 実際の研究モデルでのbionetliteの使用方法を学ぶ
 * 大規模ネットワークの構築プロセスを理解する
 * Neuliteでのシミュレーション実行方法を学ぶ
 
@@ -39,10 +39,10 @@ Billeh, Y. N., Cai, B., Gratiy, S. L., Dai, K., Iyer, R., Gouwens, N. W., Abbasi
 
 この論文では、構造データと機能データを体系的に統合した、マウス一次視覚野の生物物理学的モデルのネットワークが提示されています。
 
-bionet_liteでの対応範囲
+bionetliteでの対応範囲
 -----------------------
 
-bionet_liteならびにNeuliteはbiophysicalモデルのみに対応しているため、このモデルに含まれる生物物理学的ニューロンからなるネットワークの構築に焦点を当てます。
+bionetliteならびにNeuliteはbiophysicalモデルのみに対応しているため、このモデルに含まれる生物物理学的ニューロンからなるネットワークの構築に焦点を当てます。
 
 .. note::
    元のモデルには約52000個の生物物理学的ニューロンが含まれています。
@@ -53,7 +53,7 @@ bionet_liteならびにNeuliteはbiophysicalモデルのみに対応している
 既存のBMTKコードの変更
 ----------------------
 
-既存のAllen V1モデルのネットワーク構築コードでbionet_liteを使用するには、import文を変更するだけです：
+既存のAllen V1モデルのネットワーク構築コードでbionetliteを使用するには、import文を変更するだけです：
 
 .. code-block:: python
 
@@ -70,7 +70,7 @@ bionet_liteならびにNeuliteはbiophysicalモデルのみに対応している
 並列実行
 ========
 
-大規模なネットワークの構築は計算量と時間がかかります。bionet_liteはbionetと同様に並列実行に対応しています：
+大規模なネットワークの構築は計算量と時間がかかります。bionetliteはbionetと同様に並列実行に対応しています：
 
 .. code-block:: bash
 
@@ -91,7 +91,7 @@ bionet_liteならびにNeuliteはbiophysicalモデルのみに対応している
 ==========
 
 .. note::
-   このセクションには、bionet_lite+Neuliteでの実行結果と、bionet+NEURONでの実行結果の比較図を追加してください。
+   このセクションには、bionetlite+Neuliteでの実行結果と、bionet+NEURONでの実行結果の比較図を追加してください。
 
    以下の図を含めることを推奨します：
 

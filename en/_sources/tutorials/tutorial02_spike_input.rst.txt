@@ -8,7 +8,7 @@ Tutorial 2: スパイク入力シミュレーション
 このチュートリアルでは、生物物理学的ニューロンに対してスパイク入力を行う方法を説明します。
 
 .. warning::
-   bionet_liteは現在、Virtual cellによる入力には対応していません。このチュートリアルでは、生物物理学的ニューロンのポピュレーション情報ファイルが生成されることを確認します。
+   bionetliteは現在、Virtual cellによる入力には対応していません。このチュートリアルでは、生物物理学的ニューロンのポピュレーション情報ファイルが生成されることを確認します。
 
 前提条件: BMTKチュートリアルの実行
 ==================================
@@ -22,7 +22,7 @@ Tutorial 2: スパイク入力シミュレーション
    `Tutorial: Single Cell Simulation with External Feedforward Input (with BioNet) <https://alleninstitute.github.io/bmtk/tutorials/tutorial_02_single_cell_syn.html>`_
 
 
-2. **bionet_liteのコード例を実行**
+2. **bionetliteのコード例を実行**
 
    BMTKチュートリアルが完了したら、次のセクションに進んでください。
 
@@ -30,9 +30,9 @@ Tutorial 2: スパイク入力シミュレーション
 .. important::
    **このチュートリアルを始める前に、必ずBMTKの対応するチュートリアルを先に実行してください**
 
-   BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionet_liteの実行には、BMTKのコード・データファイルが必要です。
+   BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionetliteの実行には、BMTKのコード・データファイルが必要です。
 
-BMTKからbionet_liteへの変更
+BMTKからbionetliteへの変更
 ==============================
 
 **変更が必要なのはimport文だけです。** それ以外のコードは完全に同じです。
@@ -43,7 +43,7 @@ BMTKからbionet_liteへの変更
 
    from bmtk.builder.networks import NetworkBuilder
 
-**変更後（bionet_lite）:**
+**変更後（bionetlite）:**
 
 .. code-block:: python
 
@@ -70,7 +70,7 @@ BMTKからbionet_liteへの変更
    )
 
    # Add Virtual cells for input
-   # Note: bionet_lite ignores Virtual cells
+   # Note: bionetlite ignores Virtual cells
    net.add_nodes(
        N=10,
        pop_name='input',
@@ -110,7 +110,7 @@ mcortex_population.csv
 制限事項
 ========
 
-bionet_liteならびにNeuliteは、以下の入力方式に対応しています：
+bionetliteならびにNeuliteは、以下の入力方式に対応しています：
 
 * ✅ 定常電流入力
 * ❌ ファイルからのスパイク列入力（現在非対応）
@@ -123,4 +123,4 @@ bionet_liteならびにNeuliteは、以下の入力方式に対応していま�
 ============
 
 * :doc:`tutorial03_single_population` - 複数ニューロンを含む単一ポピュレーション
-* :doc:`../advanced/specification` - bionet_liteの詳細な仕様と制限事項
+* :doc:`../advanced/specification` - bionetliteの詳細な仕様と制限事項

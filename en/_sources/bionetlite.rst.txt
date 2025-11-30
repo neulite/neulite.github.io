@@ -1,11 +1,11 @@
 ==================
-Bionet_liteとは
+Bionetliteとは
 ==================
 
 概要
 ====
 
-Bionet_liteは、`Brain Modeling Toolkit (BMTK) <https://github.com/AllenInstitute/bmtk>`_ のbionetモジュールを拡張したPythonパッケージです。Neuliteカーネル用のネットワークデータを生成し、既存のBMTKコードを最小限の変更で再利用できます。
+Bionetliteは、`Brain Modeling Toolkit (BMTK) <https://github.com/AllenInstitute/bmtk>`_ のbionetモジュールを拡張したPythonパッケージです。Neuliteカーネル用のネットワークデータを生成し、既存のBMTKコードを最小限の変更で再利用できます。
 
 特徴
 ====
@@ -27,7 +27,7 @@ BMTKで記述されたネットワーク構築コードのimport文を変更す�
 
 .. code-block:: python
 
-   # bionet_lite case (only change import)
+   # bionetlite case (only change import)
    from bionetlite import NeuliteBuilder as NetworkBuilder
 
    net = NetworkBuilder('v1')
@@ -46,7 +46,7 @@ BMTKのNetworkBuilderクラスを拡張し、bionetの全機能を維持しな�
    # bionet case
    from bmtk.builder.networks import NetworkBuilder
 
-   # bionet_lite case
+   # bionetlite case
    from bionetlite import NeuliteBuilder as NetworkBuilder
 
 
@@ -63,7 +63,7 @@ BMTKのNetworkBuilderクラスを拡張し、bionetの全機能を維持しな�
 出力ファイルの比較
 ==================
 
-bionetとbionet_liteでは、生成されるファイルが異なります。
+bionetとbionetliteでは、生成されるファイルが異なります。
 
 .. list-table:: 出力ファイルの比較
    :header-rows: 1
@@ -71,7 +71,7 @@ bionetとbionet_liteでは、生成されるファイルが異なります。
 
    * - File Type
      - bionet (BMTK)
-     - bionet_lite
+     - bionetlite
    * - Network Data
      - | ``<network>_nodes.h5``
        | ``<network>_node_types.csv``
@@ -91,7 +91,7 @@ bionetとbionet_liteでは、生成されるファイルが異なります。
      - | JSON format (``*_fit.json``)
        | **+** CSV format (converted for Neulite)
 
-bionet_liteは、BMTKの標準出力（H5/CSV）を完全に維持しながら、Neulite用の追加ファイル（<network_name>_population.csv、<src>_<trg>_connection.csv）を生成します。これにより、同じネットワークデータで両方のシミュレータを実行できます。
+bionetliteは、BMTKの標準出力（H5/CSV）を完全に維持しながら、Neulite用の追加ファイル（<network_name>_population.csv、<src>_<trg>_connection.csv）を生成します。これにより、同じネットワークデータで両方のシミュレータを実行できます。
 
 
 
@@ -124,8 +124,8 @@ bionet_liteは、BMTKの標準出力（H5/CSV）を完全に維持しながら�
 ==========
 
 * Neuliteシミュレータ: :doc:`neulite`
-* セットアップガイド: :doc:`getting_started/bionet_lite_setup`
+* セットアップガイド: :doc:`getting_started/bionetlite_setup`
 * チュートリアル: :doc:`tutorials/tutorial01_single_cell`
 
 .. seealso::
-   Bionet_liteの設計詳細や実装、BMTKとBioNetの背景については、:doc:`architecture/design_and_implementation` を参照してください。
+   Bionetliteの設計詳細や実装、BMTKとBioNetの背景については、:doc:`architecture/design_and_implementation` を参照してください。

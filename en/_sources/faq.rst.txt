@@ -5,32 +5,32 @@
 一般的な質問
 ============
 
-bionet_liteとは何ですか？
+bionetliteとは何ですか？
 --------------------------
 
-bionet_liteは、BMTKのbionetモジュールを拡張し、新しい生物物理学的ニューロンシミュレータ「Neulite」のためのネットワークデータを生成するPythonパッケージです。
+bionetliteは、BMTKのbionetモジュールを拡張し、新しい生物物理学的ニューロンシミュレータ「Neulite」のためのネットワークデータを生成するPythonパッケージです。
 
-なぜbionet_liteが必要なのですか？
+なぜbionetliteが必要なのですか？
 ---------------------------------
 
-bionet_liteは、Neuliteカーネルを使って生物物理学的ニューロンシミュレーションを実行するために必要です。
+bionetliteは、Neuliteカーネルを使って生物物理学的ニューロンシミュレーションを実行するために必要です。
 
-Neuliteは軽量で高性能なシミュレータで、スーパーコンピュータでの大規模シミュレーションに最適化されています。bionet_liteは、BMTKのネットワーク構築機能を活用しながら、Neulite用のネットワークファイルを生成します。
+Neuliteは軽量で高性能なシミュレータで、スーパーコンピュータでの大規模シミュレーションに最適化されています。bionetliteは、BMTKのネットワーク構築機能を活用しながら、Neulite用のネットワークファイルを生成します。
 
 詳細は以下を参照してください：
 
 * :doc:`neulite` - Neuliteカーネルについて
-* :doc:`bionet_lite` - bionet_liteについて
+* :doc:`bionetlite` - bionetliteについて
 * :doc:`architecture/design_and_implementation` - BMTKとBioNetの背景
 
-bionetとbionet_liteの違いは何ですか？
+bionetとbionetliteの違いは何ですか？
 --------------------------------------
 
 主な違いは以下の通りです：
 
-* **ターゲットシミュレータ**: bionet→NEURON、bionet_lite→Neulite
-* **接続位置の決定**: bionetはシミュレータ実行時、bionet_liteはネットワーク構築時
-* **出力ファイル**: bionet_liteはNeulite用のCSVファイルを追加生成
+* **ターゲットシミュレータ**: bionet→NEURON、bionetlite→Neulite
+* **接続位置の決定**: bionetはシミュレータ実行時、bionetliteはネットワーク構築時
+* **出力ファイル**: bionetliteはNeulite用のCSVファイルを追加生成
 
 インストールと環境
 ==================
@@ -40,7 +40,7 @@ bionetとbionet_liteの違いは何ですか？
 
 Python 3.7以上が必要です。
 
-詳細なセットアップ手順については、:doc:`getting_started/bionet_lite_setup` を参照してください。
+詳細なセットアップ手順については、:doc:`getting_started/bionetlite_setup` を参照してください。
 
 どのOSで動作しますか？
 ----------------------
@@ -53,12 +53,12 @@ Python 3.7以上が必要です。
 
 はい、Neuliteはスーパーコンピュータでの実行を想定して設計されています。特に `富岳 <https://www.r-ccs.riken.jp/en/fugaku/>`_ での実行実績があります。
 
-一方で、bionet_liteはPythonの複数のライブラリに依存しているため、bionet_liteを用いたネットワーク構築はクラスタマシン等の環境で実行することを推奨しています。
+一方で、bionetliteはPythonの複数のライブラリに依存しているため、bionetliteを用いたネットワーク構築はクラスタマシン等の環境で実行することを推奨しています。
 
 使用方法
 ========
 
-既存のbionetコードをbionet_liteに変換するには？
+既存のbionetコードをbionetliteに変換するには？
 ------------------------------------------------
 
 import文を変更するだけです：
@@ -76,7 +76,7 @@ import文を変更するだけです：
 Point neuronやVirtual neuronは使えますか？
 -------------------------------------------
 
-いいえ、現在bionet_liteはbiophysicalニューロンのみをサポートしています。
+いいえ、現在bionetliteはbiophysicalニューロンのみをサポートしています。
 
 なぜexp2syn以外のシナプスモデルは使えないのですか？
 ---------------------------------------------------
@@ -86,7 +86,7 @@ Point neuronやVirtual neuronは使えますか？
 スパイク入力は使えますか？
 --------------------------
 
-現在、bionet_liteとNeuliteは定常電流入力のみをサポートしています。スパイク入力機能は、Neulite側での実装が必要です。
+現在、bionetliteとNeuliteは定常電流入力のみをサポートしています。スパイク入力機能は、Neulite側での実装が必要です。
 
 並列実行
 ========
@@ -109,19 +109,19 @@ mpirunを使用するだけです：
 "Module not found" エラーが出ます
 ----------------------------------
 
-bionet_liteが正しくセットアップされているか確認してください：
+bionetliteが正しくセットアップされているか確認してください：
 
 .. code-block:: bash
 
    # Verify bionetlite.py exists
    ls bionetlite.py
 
-セットアップされていない場合は、:doc:`getting_started/bionet_lite_setup` を参照してください。
+セットアップされていない場合は、:doc:`getting_started/bionetlite_setup` を参照してください。
 
 接続位置がbionetと異なります
 ------------------------------
 
-これは仕様です。bionet_liteは接続位置をネットワーク構築時にランダムに決定します。bionetとは異なるシード値を使用するため、完全に同一の接続位置にはなりません。
+これは仕様です。bionetliteは接続位置をネットワーク構築時にランダムに決定します。bionetとは異なるシード値を使用するため、完全に同一の接続位置にはなりません。
 
 ただし、一度生成した<src>_<trg>_connection.csvを使用すれば、確実に同じネットワークでシミュレーションを実行できます。
 

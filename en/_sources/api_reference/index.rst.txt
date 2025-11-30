@@ -2,18 +2,18 @@
 APIリファレンス
 ================
 
-このセクションでは、bionet_liteの主要なAPIについて説明します。
+このセクションでは、bionetliteの主要なAPIについて説明します。
 
 概要
 ====
 
-bionet_liteは、BMTKのネットワークビルダーを拡張したPythonライブラリです。
+bionetliteは、BMTKのネットワークビルダーを拡張したPythonライブラリです。
 BMTKコードのimport文を変更するだけで、Neuliteシミュレータ用のファイルを生成できます。
 
 NeuliteBuilderクラス
 ====================
 
-bionet_liteのメインインターフェースです。BMTKの ``NetworkBuilder`` を継承しています。
+bionetliteのメインインターフェースです。BMTKの ``NetworkBuilder`` を継承しています。
 
 初期化
 ------

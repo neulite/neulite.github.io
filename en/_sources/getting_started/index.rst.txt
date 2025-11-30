@@ -6,7 +6,7 @@ Getting Started
 
 Neuliteシステムは2つのコンポーネントから構成されています：
 
-* **bionet_lite**: ネットワーク構築用のPythonパッケージ
+* **bionetlite**: ネットワーク構築用のPythonパッケージ
 * **Neuliteカーネル**: シミュレーション実行用のCプログラム
 
 両方のコンポーネントが必要です。
@@ -14,5 +14,5 @@ Neuliteシステムは2つのコンポーネントから構成されています
 .. toctree::
    :maxdepth: 2
 
-   bionet_lite_setup
+   bionetlite_setup
    neulite_build
