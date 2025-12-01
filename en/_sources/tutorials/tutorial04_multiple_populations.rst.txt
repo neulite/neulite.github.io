@@ -128,34 +128,42 @@ Neulite用の接続ファイル。ポピュレーション内およびポピュ�
 Neuliteカーネルのビルドと実行
 =============================
 
-ステップ1: config.hの設置とカーネルのビルド
--------------------------------------------
+ステップ1: カーネルソースの展開
+-------------------------------
 
-bionetliteが生成した ``config.h`` をカーネルディレクトリにコピーし、ビルドします：
+Neuliteのkernelディレクトリの内容をbionetliteが生成したkernelディレクトリにコピーします。config.hはbionetliteが生成済みなので除外します：
 
 .. code-block:: bash
 
-   cp sim_ch04_nl/kernel/config.h /path/to/neulite/kernel/
-   cd /path/to/neulite/kernel
-   make
+   rsync -av --exclude='config.h' /path/to/neulite/kernel/ sim_ch04_nl/kernel/
 
-ステップ2: バイナリのコピー
+ステップ2: カーネルのビルド
 ---------------------------
 
-ビルドしたバイナリファイル ``nl`` をbionetliteが生成したディレクトリにコピーします：
+kernelディレクトリに移動してビルドします。config.hは既にbionetliteによって生成されています：
 
 .. code-block:: bash
 
-   cp /path/to/neulite/kernel/nl sim_ch04_nl/
+   cd sim_ch04_nl/kernel
+   make
 
-ステップ3: シミュレーションの実行
+ステップ3: バイナリの配置
+-------------------------
+
+ビルドしたバイナリファイル ``nl`` を1階層上にコピーします：
+
+.. code-block:: bash
+
+   cp nl ../
+
+ステップ4: シミュレーションの実行
 ---------------------------------
 
 bionetliteが生成したディレクトリに移動して、シミュレーションを実行します：
 
 .. code-block:: bash
 
-   cd sim_ch04_nl
+   cd ..
    ./nl V1_population.csv V1_V1_connection.csv
 
 .. note::

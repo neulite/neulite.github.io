@@ -178,14 +178,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id5">Neuliteカーネルのビルドと実行</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#config-h">ステップ1: config.hの設置とカーネルのビルド</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">ステップ2: バイナリのコピー</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">ステップ3: シミュレーションの実行</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">シミュレーション結果ファイル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">ステップ1: カーネルソースの展開</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">ステップ2: カーネルのビルド</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">ステップ3: バイナリの配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">ステップ4: シミュレーションの実行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">シミュレーション結果ファイル</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">BMTKとの実行結果の比較</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id11">次のステップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">BMTKとの実行結果の比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">次のステップ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial02_spike_input.html">Tutorial 2: スパイク入力シミュレーション</a><ul>
@@ -229,14 +230,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#id3">Neuliteカーネルのビルドと実行</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorial04_multiple_populations.html#config-h">ステップ1: config.hの設置とカーネルのビルド</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorial04_multiple_populations.html#id4">ステップ2: バイナリのコピー</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorial04_multiple_populations.html#id5">ステップ3: シミュレーションの実行</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorial04_multiple_populations.html#id6">シミュレーション結果ファイル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial04_multiple_populations.html#id4">ステップ1: カーネルソースの展開</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial04_multiple_populations.html#id5">ステップ2: カーネルのビルド</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial04_multiple_populations.html#id6">ステップ3: バイナリの配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial04_multiple_populations.html#id7">ステップ4: シミュレーションの実行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial04_multiple_populations.html#id8">シミュレーション結果ファイル</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#lif">LIFモデルとの混在について</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#id7">次のステップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#id9">次のステップ</a></li>
 </ul>
 </li>
 </ul>
@@ -722,32 +724,38 @@
 </section>
 <section id="id5">
 <h2>Neuliteカーネルのビルドと実行<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
-<section id="config-h">
-<h3>ステップ1: config.hの設置とカーネルのビルド<a class="headerlink" href="#config-h" title="Link to this heading"></a></h3>
-<p>bionetliteが生成した <code class="docutils literal notranslate"><span class="pre">config.h</span></code> をカーネルディレクトリにコピーし、ビルドします：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>sim_ch01_nl/kernel/config.h<span class="w"> </span>/path/to/neulite/kernel/
-<span class="nb">cd</span><span class="w"> </span>/path/to/neulite/kernel
-make
-</pre></div>
-</div>
-</section>
 <section id="id6">
-<h3>ステップ2: バイナリのコピー<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
-<p>ビルドしたバイナリファイル <code class="docutils literal notranslate"><span class="pre">nl</span></code> をbionetliteが生成したディレクトリにコピーします：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>/path/to/neulite/kernel/nl<span class="w"> </span>sim_ch01_nl/
+<h3>ステップ1: カーネルソースの展開<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<p>Neuliteのkernelディレクトリの内容をbionetliteが生成したkernelディレクトリにコピーします。config.hはbionetliteが生成済みなので除外します：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync<span class="w"> </span>-av<span class="w"> </span>--exclude<span class="o">=</span><span class="s1">&#39;config.h&#39;</span><span class="w"> </span>/path/to/neulite/kernel/<span class="w"> </span>sim_ch01_nl/kernel/
 </pre></div>
 </div>
 </section>
 <section id="id7">
-<h3>ステップ3: シミュレーションの実行<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
-<p>bionetliteが生成したディレクトリに移動して、シミュレーションを実行します：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>sim_ch01_nl
-./nl<span class="w"> </span>mcortex_population.csv<span class="w"> </span>mcortex_mcortex_connection.csv
+<h3>ステップ2: カーネルのビルド<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>kernelディレクトリに移動してビルドします。config.hは既にbionetliteによって生成されています：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>sim_ch01_nl/kernel
+make
 </pre></div>
 </div>
 </section>
 <section id="id8">
-<h3>シミュレーション結果ファイル<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<h3>ステップ3: バイナリの配置<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<p>ビルドしたバイナリファイル <code class="docutils literal notranslate"><span class="pre">nl</span></code> を1階層上にコピーします：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>nl<span class="w"> </span>../
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3>ステップ4: シミュレーションの実行<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<p>bionetliteが生成したディレクトリに移動して、シミュレーションを実行します：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>..
+./nl<span class="w"> </span>mcortex_population.csv<span class="w"> </span>mcortex_mcortex_connection.csv
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h3>シミュレーション結果ファイル<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
 <p>Neuliteカーネル実行後、以下のテキストファイルが生成されます：</p>
 <p><strong>s.dat</strong> - スパイク時刻データ</p>
 <p>スペース区切りのテキスト形式で、各行に1つのスパイクイベントを記録：</p>
@@ -779,18 +787,18 @@ make
 </div>
 </section>
 </section>
-<section id="id9">
-<h2>BMTKとの実行結果の比較<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
-<figure class="align-center" id="id12">
+<section id="id11">
+<h2>BMTKとの実行結果の比較<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id14">
 <a class="reference internal image-reference" href="../_images/voltage_comparison_tutorial1.png"><img alt="BMTK と Neulite の実行結果の比較（dt=0.025）" src="../_images/voltage_comparison_tutorial1.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">dt=0.025での <a class="reference external" href="https://alleninstitute.github.io/bmtk/">BMTK</a> と Neulite の実行結果を比較したプロット。</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+<p><span class="caption-text">dt=0.025での <a class="reference external" href="https://alleninstitute.github.io/bmtk/">BMTK</a> と Neulite の実行結果を比較したプロット。</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
-<section id="id11">
-<h2>次のステップ<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<section id="id13">
+<h2>次のステップ<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="tutorial02_spike_input.html"><span class="doc">Tutorial 2: スパイク入力シミュレーション</span></a> - スパイク入力を使用したシミュレーション</p></li>
 <li><p><a class="reference internal" href="../user_guide/basic_usage.html"><span class="doc">基本的な使い方</span></a> - より詳細な使用方法</p></li>
