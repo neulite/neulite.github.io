@@ -7,36 +7,8 @@ Tutorial 1: 単一細胞の定常電流入力
 
 このチュートリアルでは、単一の生物物理学的ニューロンに対して定常電流入力を行う最もシンプルな例を示します。
 
-目的
-====
-
-* bionetliteの基本的な使い方を理解する
-* NeuliteBuilderの初期化方法を学ぶ
-* 単一ニューロンのネットワークを構築する
-* 生成されるファイルの構造を理解する
-
-前提条件: BMTKチュートリアルの実行
-==================================
-
-**実行手順：**
-
-1. **BMTKチュートリアルを実行**
-
-   まず、以下のBMTKチュートリアルを最後まで実行してください：
-
-   `Tutorial: Single Cell Simulation with Current Injection (with BioNet) <https://alleninstitute.github.io/bmtk/tutorials/tutorial_01_single_cell_clamped.html>`_
-
-
-2. **bionetliteのコード例を実行**
-
-   BMTKチュートリアルが完了したら、次のセクションに進んでください。
-
-
-.. important::
-   **このチュートリアルを始める前に、必ずBMTKの対応するチュートリアルを先に実行してください**
-
-   BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionetliteの実行には、BMTKのコード・データファイルが必要です。
-
+.. seealso::
+   対応するBMTKチュートリアル: `Tutorial: Single Cell Simulation with Current Injection <https://alleninstitute.github.io/bmtk/tutorials/tutorial_01_single_cell_clamped.html>`_
 
 bionetからbionetliteへの変更
 ==============================
@@ -176,7 +148,7 @@ Neuliteカーネル用のコンパイル時設定ファイル。BMTKのconfig.js
    #pragma once
 
    // Simulation parameters
-   #define TSTOP ( 3000.0 )
+   #define TSTOP ( 2000.0 )
    #define DT ( 0.1 )
    #define INV_DT ( ( int ) ( 1.0 / ( DT ) ) )
 
@@ -185,9 +157,9 @@ Neuliteカーネル用のコンパイル時設定ファイル。BMTKのconfig.js
    #define ALLACTIVE ( 0 )
 
    // Current injection parameters
-   #define I_AMP ( 0.1 )
+   #define I_AMP ( 0.12 )
    #define I_DELAY ( 500.0 )
-   #define I_DURATION ( 500.0 )
+   #define I_DURATION ( 1000.0 )
 
 このファイルには以下のパラメータが含まれます：
 

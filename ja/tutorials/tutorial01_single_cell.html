@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial 1: 単一細胞の定常電流入力 &mdash; Neulite 0.1.0 ドキュメント</title>
+  <title>Tutorial 1: 単一細胞の定常電流入力 &mdash; Neulite 1.0 ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=739a56bc" />
@@ -14,7 +14,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=98e9f989"></script>
+      <script src="../_static/documentation_options.js?v=6bbe880f"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/translations.js?v=4755f45a"></script>
@@ -161,11 +161,9 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 1: 単一細胞の定常電流入力</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">概要</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">目的</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bmtk">前提条件: BMTKチュートリアルの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bionetbionetlite">bionetからbionetliteへの変更</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">コード例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">生成されるファイル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">コード例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">生成されるファイル</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#network-name-population-csv">&lt;network_name&gt;_population.csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#src-trg-connection-csv">&lt;src&gt;_&lt;trg&gt;_connection.csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#swc">処理済みswcファイル</a></li>
@@ -177,21 +175,20 @@
 <li class="toctree-l3"><a class="reference internal" href="#kernel-config-h">kernel/config.h</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">Neuliteカーネルのビルドと実行</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">ステップ1: カーネルソースの展開</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">ステップ2: カーネルのビルド</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">ステップ3: バイナリの配置</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">ステップ4: シミュレーションの実行</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">シミュレーション結果ファイル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Neuliteカーネルのビルドと実行</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">ステップ1: カーネルソースの展開</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">ステップ2: カーネルのビルド</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">ステップ3: バイナリの配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">ステップ4: シミュレーションの実行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">シミュレーション結果ファイル</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id11">BMTKとの実行結果の比較</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">次のステップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bmtk">BMTKとの実行結果の比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">次のステップ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial02_spike_input.html">Tutorial 2: スパイク入力シミュレーション</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial02_spike_input.html#id1">概要</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial02_spike_input.html#bmtk">前提条件: BMTKチュートリアルの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial02_spike_input.html#bmtkbionetlite">BMTKからbionetliteへの変更</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial02_spike_input.html#id2">コード例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial02_spike_input.html#id3">生成されるファイル</a><ul>
@@ -204,7 +201,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial03_single_population.html">Tutorial 3: 単一ポピュレーションネットワーク</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial03_single_population.html#id1">概要</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial03_single_population.html#bmtk">前提条件: BMTKチュートリアルの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial03_single_population.html#bmtkbionetlite">BMTKからbionetliteへの変更</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial03_single_population.html#id2">生成されるファイル</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial03_single_population.html#mcortex-population-csv">mcortex_population.csv</a></li>
@@ -217,7 +213,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial04_multiple_populations.html">Tutorial 4: 複数のポピュレーションからなるネットワーク</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#id1">概要</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#bmtk">前提条件: BMTKチュートリアルの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#bionetbionetlite">bionetからbionetliteへの変更</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#id2">生成されるファイル</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial04_multiple_populations.html#population-csv">population.csv</a></li>
@@ -407,21 +402,20 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../advanced/allen_v1_model.html">Allen V1 Model: 大規模ネットワーク</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id1">概要</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id2">目的</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id3">モデルの概要</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#id4">モデルの出典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id2">モデルの概要</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#id3">モデルの出典</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#bionetlite">bionetliteでの対応範囲</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id5">コード例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id4">コード例</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#bmtk">既存のBMTKコードの変更</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id6">並列実行</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id7">生成されるファイル</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id8">結果の確認</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id9">次のステップ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#id10">関連リンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id5">並列実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id6">生成されるファイル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id7">結果の確認</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id8">次のステップ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#id9">関連リンク</a></li>
 </ul>
 </li>
 </ul>
@@ -505,13 +499,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">変更履歴</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">バージョン 1.0.0</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id4">主な成果</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">対応環境</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id6">既知の制限</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">バージョン 1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id3">更新内容</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">主な成果</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id6">対応環境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">既知の制限</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id7">今後の予定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id8">今後の予定</a></li>
 </ul>
 </li>
 </ul>
@@ -545,32 +540,9 @@
 <section id="id1">
 <h2>概要<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <p>このチュートリアルでは、単一の生物物理学的ニューロンに対して定常電流入力を行う最もシンプルな例を示します。</p>
-</section>
-<section id="id2">
-<h2>目的<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>bionetliteの基本的な使い方を理解する</p></li>
-<li><p>NeuliteBuilderの初期化方法を学ぶ</p></li>
-<li><p>単一ニューロンのネットワークを構築する</p></li>
-<li><p>生成されるファイルの構造を理解する</p></li>
-</ul>
-</section>
-<section id="bmtk">
-<h2>前提条件: BMTKチュートリアルの実行<a class="headerlink" href="#bmtk" title="Link to this heading"></a></h2>
-<p><strong>実行手順：</strong></p>
-<ol class="arabic">
-<li><p><strong>BMTKチュートリアルを実行</strong></p>
-<p>まず、以下のBMTKチュートリアルを最後まで実行してください：</p>
-<p><a class="reference external" href="https://alleninstitute.github.io/bmtk/tutorials/tutorial_01_single_cell_clamped.html">Tutorial: Single Cell Simulation with Current Injection (with BioNet)</a></p>
-</li>
-<li><p><strong>bionetliteのコード例を実行</strong></p>
-<p>BMTKチュートリアルが完了したら、次のセクションに進んでください。</p>
-</li>
-</ol>
-<div class="admonition important">
-<p class="admonition-title">重要</p>
-<p><strong>このチュートリアルを始める前に、必ずBMTKの対応するチュートリアルを先に実行してください</strong></p>
-<p>BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionetliteの実行には、BMTKのコード・データファイルが必要です。</p>
+<div class="admonition seealso">
+<p class="admonition-title">参考</p>
+<p>対応するBMTKチュートリアル: <a class="reference external" href="https://alleninstitute.github.io/bmtk/tutorials/tutorial_01_single_cell_clamped.html">Tutorial: Single Cell Simulation with Current Injection</a></p>
 </div>
 </section>
 <section id="bionetbionetlite">
@@ -585,8 +557,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id3">
-<h2>コード例<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id2">
+<h2>コード例<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bionetlite</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeuliteBuilder</span> <span class="k">as</span> <span class="n">NetworkBuilder</span>
 
 <span class="c1"># Create network</span>
@@ -610,8 +582,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id4">
-<h2>生成されるファイル<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<section id="id3">
+<h2>生成されるファイル<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <p>このシミュレーションでは以下のファイルが生成されます：</p>
 <section id="network-name-population-csv">
 <h3>&lt;network_name&gt;_population.csv<a class="headerlink" href="#network-name-population-csv" title="Link to this heading"></a></h3>
@@ -692,7 +664,7 @@
 <span class="cp">#pragma once</span>
 
 <span class="c1">// Simulation parameters</span>
-<span class="cp">#define TSTOP ( 3000.0 )</span>
+<span class="cp">#define TSTOP ( 2000.0 )</span>
 <span class="cp">#define DT ( 0.1 )</span>
 <span class="cp">#define INV_DT ( ( int ) ( 1.0 / ( DT ) ) )</span>
 
@@ -701,9 +673,9 @@
 <span class="cp">#define ALLACTIVE ( 0 )</span>
 
 <span class="c1">// Current injection parameters</span>
-<span class="cp">#define I_AMP ( 0.1 )</span>
+<span class="cp">#define I_AMP ( 0.12 )</span>
 <span class="cp">#define I_DELAY ( 500.0 )</span>
-<span class="cp">#define I_DURATION ( 500.0 )</span>
+<span class="cp">#define I_DURATION ( 1000.0 )</span>
 </pre></div>
 </div>
 <p>このファイルには以下のパラメータが含まれます：</p>
@@ -722,40 +694,40 @@
 </div>
 </section>
 </section>
+<section id="id4">
+<h2>Neuliteカーネルのビルドと実行<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <section id="id5">
-<h2>Neuliteカーネルのビルドと実行<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
-<section id="id6">
-<h3>ステップ1: カーネルソースの展開<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<h3>ステップ1: カーネルソースの展開<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <p>Neuliteのkernelディレクトリの内容をbionetliteが生成したkernelディレクトリにコピーします。config.hはbionetliteが生成済みなので除外します：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync<span class="w"> </span>-av<span class="w"> </span>--exclude<span class="o">=</span><span class="s1">&#39;config.h&#39;</span><span class="w"> </span>/path/to/neulite/kernel/<span class="w"> </span>sim_ch01_nl/kernel/
 </pre></div>
 </div>
 </section>
-<section id="id7">
-<h3>ステップ2: カーネルのビルド<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<section id="id6">
+<h3>ステップ2: カーネルのビルド<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>kernelディレクトリに移動してビルドします。config.hは既にbionetliteによって生成されています：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>sim_ch01_nl/kernel
 make
 </pre></div>
 </div>
 </section>
-<section id="id8">
-<h3>ステップ3: バイナリの配置<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<section id="id7">
+<h3>ステップ3: バイナリの配置<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <p>ビルドしたバイナリファイル <code class="docutils literal notranslate"><span class="pre">nl</span></code> を1階層上にコピーします：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>nl<span class="w"> </span>../
 </pre></div>
 </div>
 </section>
-<section id="id9">
-<h3>ステップ4: シミュレーションの実行<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<section id="id8">
+<h3>ステップ4: シミュレーションの実行<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <p>bionetliteが生成したディレクトリに移動して、シミュレーションを実行します：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>..
 ./nl<span class="w"> </span>mcortex_population.csv<span class="w"> </span>mcortex_mcortex_connection.csv
 </pre></div>
 </div>
 </section>
-<section id="id10">
-<h3>シミュレーション結果ファイル<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<section id="id9">
+<h3>シミュレーション結果ファイル<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <p>Neuliteカーネル実行後、以下のテキストファイルが生成されます：</p>
 <p><strong>s.dat</strong> - スパイク時刻データ</p>
 <p>スペース区切りのテキスト形式で、各行に1つのスパイクイベントを記録：</p>
@@ -787,18 +759,18 @@ make
 </div>
 </section>
 </section>
-<section id="id11">
-<h2>BMTKとの実行結果の比較<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
-<figure class="align-center" id="id14">
+<section id="bmtk">
+<h2>BMTKとの実行結果の比較<a class="headerlink" href="#bmtk" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id12">
 <a class="reference internal image-reference" href="../_images/voltage_comparison_tutorial1.png"><img alt="BMTK と Neulite の実行結果の比較（dt=0.025）" src="../_images/voltage_comparison_tutorial1.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">dt=0.025での <a class="reference external" href="https://alleninstitute.github.io/bmtk/">BMTK</a> と Neulite の実行結果を比較したプロット。</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+<p><span class="caption-text">dt=0.025での <a class="reference external" href="https://alleninstitute.github.io/bmtk/">BMTK</a> と Neulite の実行結果を比較したプロット。</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
-<section id="id13">
-<h2>次のステップ<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id11">
+<h2>次のステップ<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="tutorial02_spike_input.html"><span class="doc">Tutorial 2: スパイク入力シミュレーション</span></a> - スパイク入力を使用したシミュレーション</p></li>
 <li><p><a class="reference internal" href="../user_guide/basic_usage.html"><span class="doc">基本的な使い方</span></a> - より詳細な使用方法</p></li>

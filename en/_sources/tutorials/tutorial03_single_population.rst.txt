@@ -10,29 +10,8 @@ Tutorial 3: 単一ポピュレーションネットワーク
 .. warning::
    bionetliteは現在、外部かファイルを用いたスパイク入力には対応していません。このチュートリアルでは、生物物理学的ニューロンのポピュレーションファイル・シナプス接続情報ファイルが生成されることを確認します。
 
-
-前提条件: BMTKチュートリアルの実行
-==================================
-
-**実行手順：**
-
-1. **BMTKチュートリアルを実行**
-
-   まず、以下のBMTKチュートリアルを最後まで実行してください：
-
-   `Tutorial: Multi-Cell, Single Population Network (with BioNet) <https://alleninstitute.github.io/bmtk/tutorials/tutorial_03_single_pop.html>`_
-
-
-2. **bionetliteのコード例を実行**
-
-   BMTKチュートリアルが完了したら、次のセクションに進んでください。
-
-
-.. important::
-   **このチュートリアルを始める前に、必ずBMTKの対応するチュートリアルを先に実行してください**
-
-   BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionetliteの実行には、BMTKのコード・データファイルが必要です。
-
+.. seealso::
+   対応するBMTKチュートリアル: `Tutorial: Multi-Cell, Single Population Network <https://alleninstitute.github.io/bmtk/tutorials/tutorial_03_single_pop.html>`_
 
 BMTKからbionetliteへの変更
 ==============================

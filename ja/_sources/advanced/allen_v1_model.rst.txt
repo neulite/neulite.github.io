@@ -7,13 +7,6 @@ Allen V1 Model: 大規模ネットワーク
 
 このチュートリアルでは、マウス一次視覚野カラムモデルをbionetliteで構築する実例を示します。これは実際の研究で使用される大規模な生物物理学的モデルです。
 
-目的
-====
-
-* 実際の研究モデルでのbionetliteの使用方法を学ぶ
-* 大規模ネットワークの構築プロセスを理解する
-* Neuliteでのシミュレーション実行方法を学ぶ
-
 .. figure:: ../_static/v1_stride_50_transparent.png
    :width: 600px
    :align: center

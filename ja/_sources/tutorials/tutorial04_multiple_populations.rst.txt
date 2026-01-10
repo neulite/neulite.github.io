@@ -7,27 +7,8 @@ Tutorial 4: 複数のポピュレーションからなるネットワーク
 
 このチュートリアルでは、複数のニューロンタイプからなる複数ポピュレーションのシミュレーションを行います。
 
-
-前提条件: BMTKチュートリアルの実行
-==================================
-
-**実行手順：**
-
-1. **BMTKチュートリアルを実行**
-
-   まず、以下のBMTKチュートリアルを最後まで実行してください：
-
-   `Tutorial: Multi-Population Recurrent Network (with BioNet) <https://alleninstitute.github.io/bmtk/tutorials/tutorial_04_multi_pop.html>`_
-
-2. **bionetliteのコード例を実行**
-
-   BMTKチュートリアルが完了したら、次のセクションに進んでください。
-
-
-.. important::
-   **このチュートリアルを始める前に、必ずBMTKの対応するチュートリアルを先に実行してください**
-
-   BMTKのチュートリアルを実行することで、必要なデータファイル（SWCファイル、JSONファイル等）が自動的にダウンロードされます。bionetliteの実行には、BMTKのコード・データファイルが必要です。
+.. seealso::
+   対応するBMTKチュートリアル: `Tutorial: Multi-Population Recurrent Network <https://alleninstitute.github.io/bmtk/tutorials/tutorial_04_multi_pop.html>`_
 
 bionetからbionetliteへの変更
 ==============================

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial 1: Steady-State Current Injection in a Single Cell &mdash; Neulite 0.1.0 documentation</title>
+  <title>Tutorial 1: Steady-State Current Injection in a Single Cell &mdash; Neulite 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=739a56bc" />
@@ -14,7 +14,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/documentation_options.js?v=f2a433a1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -160,11 +160,9 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 1: Steady-State Current Injection in a Single Cell</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bmtk">Prerequisites: Running the BMTK Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bionetbionetlite">Changes from bionet to bionetlite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">Code Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">Generated Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Code Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Generated Files</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#network-name-population-csv">&lt;network_name&gt;_population.csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#src-trg-connection-csv">&lt;src&gt;_&lt;trg&gt;_connection.csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#swc">Processed SWC File</a></li>
@@ -176,21 +174,20 @@
 <li class="toctree-l3"><a class="reference internal" href="#kernel-config-h">kernel/config.h</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">Building and Running the Neulite Kernel</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">Step 1: Deploy Kernel Sources</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">Step 2: Build the Kernel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">Step 3: Place the Binary</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">Step 4: Run the Simulation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Simulation Result Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Building and Running the Neulite Kernel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Step 1: Deploy Kernel Sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Step 2: Build the Kernel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Step 3: Place the Binary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Step 4: Run the Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Simulation Result Files</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id11">Comparison of Execution Results with BMTK</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">Next Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bmtk">Comparison of Execution Results with BMTK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">Next Steps</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial02_spike_input.html">Tutorial 2: Spike Input Simulation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial02_spike_input.html#id1">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial02_spike_input.html#bmtk">Prerequisites: Running the BMTK Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial02_spike_input.html#bmtkbionetlite">Changes from BMTK to bionetlite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial02_spike_input.html#id2">Code Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial02_spike_input.html#id3">Generated Files</a><ul>
@@ -203,7 +200,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial03_single_population.html">Tutorial 3: Single Population Network</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial03_single_population.html#id1">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial03_single_population.html#bmtk">Prerequisites: Running the BMTK Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial03_single_population.html#bmtkbionetlite">Changes from BMTK to bionetlite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial03_single_population.html#id2">Generated Files</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial03_single_population.html#mcortex-population-csv">mcortex_population.csv</a></li>
@@ -216,7 +212,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial04_multiple_populations.html">Tutorial 4: Network with Multiple Populations</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#id1">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#bmtk">Prerequisites: Running the BMTK Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#bionetbionetlite">Changes from BMTK to bionetlite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial04_multiple_populations.html#id2">Generated Files</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial04_multiple_populations.html#population-csv">population.csv</a></li>
@@ -406,21 +401,20 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../advanced/allen_v1_model.html">Allen V1 Model: Large-scale Network</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id1">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id2">Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id3">Model Overview</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#id4">Model Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id2">Model Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#id3">Model Source</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#bionetlite">bionetlite Coverage</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id5">Code Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id4">Code Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#bmtk">Modifying Existing BMTK Code</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id6">Parallel Execution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id7">Generated Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id8">Verifying Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id9">Next Steps</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#id10">Related Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id5">Parallel Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id6">Generated Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id7">Verifying Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/allen_v1_model.html#id8">Next Steps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/allen_v1_model.html#id9">Related Links</a></li>
 </ul>
 </li>
 </ul>
@@ -504,13 +498,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">Version 1.0.0</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id4">Key Achievements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">Supported Environments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id6">Known Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">Version 1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id3">Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">Key Achievements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id6">Supported Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">Known Limitations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id7">Future Plans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id8">Future Plans</a></li>
 </ul>
 </li>
 </ul>
@@ -544,32 +539,9 @@
 <section id="id1">
 <h2>Overview<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <p>This tutorial demonstrates the simplest example of applying steady-state current injection to a single biophysical neuron.</p>
-</section>
-<section id="id2">
-<h2>Objectives<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>Understand the basic usage of bionetlite</p></li>
-<li><p>Learn how to initialize NeuliteBuilder</p></li>
-<li><p>Build a network with a single neuron</p></li>
-<li><p>Understand the structure of generated files</p></li>
-</ul>
-</section>
-<section id="bmtk">
-<h2>Prerequisites: Running the BMTK Tutorial<a class="headerlink" href="#bmtk" title="Link to this heading"></a></h2>
-<p><strong>Execution Steps:</strong></p>
-<ol class="arabic">
-<li><p><strong>Run the BMTK Tutorial</strong></p>
-<p>First, run the following BMTK tutorial to completion:</p>
-<p><a class="reference external" href="https://alleninstitute.github.io/bmtk/tutorials/tutorial_01_single_cell_clamped.html">Tutorial: Single Cell Simulation with Current Injection (with BioNet)</a></p>
-</li>
-<li><p><strong>Run the bionetlite Code Example</strong></p>
-<p>Once the BMTK tutorial is complete, proceed to the next section.</p>
-</li>
-</ol>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p><strong>Before starting this tutorial, you must first run the corresponding BMTK tutorial</strong></p>
-<p>Running the BMTK tutorial will automatically download the necessary data files (SWC files, JSON files, etc.). The execution of bionetlite requires BMTK code and data files.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Corresponding BMTK tutorial: <a class="reference external" href="https://alleninstitute.github.io/bmtk/tutorials/tutorial_01_single_cell_clamped.html">Tutorial: Single Cell Simulation with Current Injection</a></p>
 </div>
 </section>
 <section id="bionetbionetlite">
@@ -584,8 +556,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id3">
-<h2>Code Example<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id2">
+<h2>Code Example<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bionetlite</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeuliteBuilder</span> <span class="k">as</span> <span class="n">NetworkBuilder</span>
 
 <span class="c1"># Create network</span>
@@ -609,8 +581,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id4">
-<h2>Generated Files<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<section id="id3">
+<h2>Generated Files<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <p>The following files are generated in this simulation:</p>
 <section id="network-name-population-csv">
 <h3>&lt;network_name&gt;_population.csv<a class="headerlink" href="#network-name-population-csv" title="Link to this heading"></a></h3>
@@ -691,7 +663,7 @@
 <span class="cp">#pragma once</span>
 
 <span class="c1">// Simulation parameters</span>
-<span class="cp">#define TSTOP ( 3000.0 )</span>
+<span class="cp">#define TSTOP ( 2000.0 )</span>
 <span class="cp">#define DT ( 0.1 )</span>
 <span class="cp">#define INV_DT ( ( int ) ( 1.0 / ( DT ) ) )</span>
 
@@ -700,9 +672,9 @@
 <span class="cp">#define ALLACTIVE ( 0 )</span>
 
 <span class="c1">// Current injection parameters</span>
-<span class="cp">#define I_AMP ( 0.1 )</span>
+<span class="cp">#define I_AMP ( 0.12 )</span>
 <span class="cp">#define I_DELAY ( 500.0 )</span>
-<span class="cp">#define I_DURATION ( 500.0 )</span>
+<span class="cp">#define I_DURATION ( 1000.0 )</span>
 </pre></div>
 </div>
 <p>This file contains the following parameters:</p>
@@ -721,40 +693,40 @@
 </div>
 </section>
 </section>
+<section id="id4">
+<h2>Building and Running the Neulite Kernel<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <section id="id5">
-<h2>Building and Running the Neulite Kernel<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
-<section id="id6">
-<h3>Step 1: Deploy Kernel Sources<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<h3>Step 1: Deploy Kernel Sources<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <p>Copy the contents of Neulite’s kernel directory to the kernel directory generated by bionetlite. Exclude config.h as it has already been generated by bionetlite:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync<span class="w"> </span>-av<span class="w"> </span>--exclude<span class="o">=</span><span class="s1">&#39;config.h&#39;</span><span class="w"> </span>/path/to/neulite/kernel/<span class="w"> </span>sim_ch01_nl/kernel/
 </pre></div>
 </div>
 </section>
-<section id="id7">
-<h3>Step 2: Build the Kernel<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<section id="id6">
+<h3>Step 2: Build the Kernel<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>Navigate to the kernel directory and build. config.h has already been generated by bionetlite:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>sim_ch01_nl/kernel
 make
 </pre></div>
 </div>
 </section>
-<section id="id8">
-<h3>Step 3: Place the Binary<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<section id="id7">
+<h3>Step 3: Place the Binary<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <p>Copy the built binary file <code class="docutils literal notranslate"><span class="pre">nl</span></code> to the parent directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>nl<span class="w"> </span>../
 </pre></div>
 </div>
 </section>
-<section id="id9">
-<h3>Step 4: Run the Simulation<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<section id="id8">
+<h3>Step 4: Run the Simulation<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <p>Navigate to the directory generated by bionetlite and run the simulation:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>..
 ./nl<span class="w"> </span>mcortex_population.csv<span class="w"> </span>mcortex_mcortex_connection.csv
 </pre></div>
 </div>
 </section>
-<section id="id10">
-<h3>Simulation Result Files<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<section id="id9">
+<h3>Simulation Result Files<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <p>The following text files are generated after running the Neulite kernel:</p>
 <p><strong>s.dat</strong> - Spike Time Data</p>
 <p>Space-delimited text format recording one spike event per line:</p>
@@ -786,18 +758,18 @@ make
 </div>
 </section>
 </section>
-<section id="id11">
-<h2>Comparison of Execution Results with BMTK<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
-<figure class="align-center" id="id14">
-<a class="reference internal image-reference" href="../_images/voltage_comparison_tutorial1.png"><img alt="BMTK と Neulite の実行結果の比較（dt=0.025）" src="../_images/voltage_comparison_tutorial1.png" style="width: 600px;" />
+<section id="bmtk">
+<h2>Comparison of Execution Results with BMTK<a class="headerlink" href="#bmtk" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="../_images/voltage_comparison_tutorial1.png"><img alt="Comparison of BMTK and Neulite execution results (dt=0.025)" src="../_images/voltage_comparison_tutorial1.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Comparison plot of execution results between <a class="reference external" href="https://alleninstitute.github.io/bmtk/">BMTK</a> and Neulite at dt=0.025.</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+<p><span class="caption-text">Comparison plot of execution results between <a class="reference external" href="https://alleninstitute.github.io/bmtk/">BMTK</a> and Neulite at dt=0.025.</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
-<section id="id13">
-<h2>Next Steps<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id11">
+<h2>Next Steps<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="tutorial02_spike_input.html"><span class="doc">Tutorial 2: Spike Input Simulation</span></a> - Simulation using spike input</p></li>
 <li><p><a class="reference internal" href="../user_guide/basic_usage.html"><span class="doc">Basic Usage</span></a> - More detailed usage instructions</p></li>
