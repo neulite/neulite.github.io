@@ -178,6 +178,7 @@ Neuliteファイルのディレクトリパスを設定します。
 ============
 
 * :doc:`file_formats` - 生成されるファイル形式の詳細
+* :doc:`unit` - 単位系と単位変換の詳細
 * :doc:`../user_guide/basic_usage` - 実践的な使用例
 * :doc:`../tutorials/tutorial01_single_cell` - チュートリアル
 * :doc:`../advanced/specification` - 仕様と制限事項

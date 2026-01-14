@@ -118,6 +118,7 @@ Neuliteは、`Brain Modeling Toolkit (BMTK) <https://github.com/AllenInstitute/b
 
    api_reference/index
    api_reference/file_formats
+   api_reference/unit
 
 .. toctree::
    :maxdepth: 2

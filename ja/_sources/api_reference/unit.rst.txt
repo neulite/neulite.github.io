@@ -1,0 +1,327 @@
+====================
+単位系リファレンス
+====================
+
+BMTK/bionetliteでパラメータを指定する際の単位系と、内部で行われる単位変換について説明します。
+
+ユーザーが指定する単位（BMTK/bionetlite）
+==========================================
+
+bionetliteでネットワークを構築する際に指定するパラメータの単位です。
+これらは `BMTK <https://alleninstitute.github.io/bmtk/>`_ と同じ単位系です。
+
+シミュレーションパラメータ
+--------------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 15 40 20
+
+   * - パラメータ
+     - 単位
+     - 説明
+     - 例
+   * - tstop
+     - ms
+     - シミュレーション終了時間
+     - 3000.0
+   * - dt
+     - ms
+     - タイムステップ
+     - 0.1
+   * - v_init
+     - mV
+     - 初期膜電位
+     - -70.0
+
+電流注入パラメータ
+------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 15 40 20
+
+   * - パラメータ
+     - 単位
+     - 説明
+     - 例
+   * - amp
+     - pA
+     - 電流注入の強度
+     - 100.0
+   * - delay
+     - ms
+     - 電流注入の開始時刻
+     - 500.0
+   * - duration
+     - ms
+     - 電流注入の持続時間
+     - 1000.0
+
+.. note::
+   BMTKでは電流をpA単位で指定します。詳細は `BMTK Current Clamps <https://alleninstitute.github.io/bmtk/current_clamps.html>`_ を参照してください。
+
+シナプスパラメータ
+------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 15 40 20
+
+   * - パラメータ
+     - 単位
+     - 説明
+     - 例
+   * - syn_weight
+     - μS
+     - シナプス重み
+     - 0.001
+   * - delay
+     - ms
+     - シナプス遅延
+     - 2.0
+   * - tau_rise (tau1)
+     - ms
+     - 立ち上がり時定数
+     - 0.1
+   * - tau_decay (tau2)
+     - ms
+     - 減衰時定数
+     - 1.7
+   * - erev (e)
+     - mV
+     - 平衡電位
+     - 0.0
+
+形態・イオンチャネルファイル
+----------------------------
+
+SWCファイルやイオンチャネルJSONファイルは `NEURON <https://www.neuron.yale.edu/neuron/>`_ の単位系で記述されています。
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 15 55
+
+   * - パラメータ
+     - 単位
+     - 説明
+   * - 座標 (x, y, z)
+     - μm
+     - SWCファイルの3D座標
+   * - 半径 (r)
+     - μm
+     - SWCファイルの7列目（直径ではなく半径）
+   * - Cm
+     - μF/cm²
+     - 膜容量
+   * - Ra
+     - Ω·cm
+     - 軸索抵抗
+   * - g_pas (leak)
+     - S/cm²
+     - リークコンダクタンス
+   * - イオンチャネル
+     - S/cm²
+     - 各チャネルのコンダクタンス
+
+内部処理での単位変換
+====================
+
+参考のため、`NEURON <https://www.neuron.yale.edu/neuron/>`_ のデフォルト単位系-Neulite間の単位変換処理の一覧を示します。
+NEURON列の単位は `NEURON Units Guide <https://nrn.readthedocs.io/en/latest/guide/units.html>`_ に基づくデフォルト単位系です。
+
+.. _NEURON Unit Chart: https://nrn.readthedocs.io/en/latest/guide/units.html
+.. _SONATA Developer Guide: https://github.com/AllenInstitute/sonata/blob/master/docs/SONATA_DEVELOPER_GUIDE.md
+.. _SWC Spec: http://www.neuronland.org/NLMorphologyConverter/MorphologyFormats/SWC/Spec.html
+.. _BMTK Current Clamps: https://alleninstitute.github.io/bmtk/current_clamps.html
+
+単位系一覧
+----------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 16 7 12 8 10 7 18 22
+
+   * - カテゴリ
+     - 変数
+     - NEURON
+     - BMTK
+     - Neulite
+     - 変換
+     - 変換箇所
+     - 備考
+   * - Time
+     - t
+     - ms
+     - ms
+     - ms
+     - なし
+     - \-
+     - `NEURON Unit Chart`_
+   * - Voltage
+     - v
+     - mV
+     - mV
+     - mV
+     - なし
+     - \-
+     - `NEURON Unit Chart`_
+   * - Current (distributed)
+     - i
+     - mA/cm²
+     - mA/cm²
+     - mA/cm²
+     - あり
+     - ion.c (×10⁻³)
+     - `NEURON Unit Chart`_
+   * - Current (point process)
+     - i
+     - nA
+     - pA
+     - nA
+     - あり
+     - solver.c (×10⁻³)
+     - `BMTK Current Clamps`_
+   * - Concentration
+     - ko, ki
+     - mM
+     - mM
+     - mM
+     - なし
+     - \-
+     - `NEURON Unit Chart`_
+   * - Specific capacitance
+     - Cm
+     - μF/cm²
+     - μF/cm²
+     - μF/cm²
+     - なし
+     - popl_func.h (面積変換のみ)
+     - `NEURON Unit Chart`_
+   * - Length
+     - L
+     - μm
+     - μm
+     - cm
+     - あり
+     - popl_func.h (×10⁻⁴)
+     - SWC座標はμm (`SWC Spec`_)
+   * - Diameter
+     - diam
+     - μm
+     - μm
+     - cm
+     - あり
+     - popl_func.h (×10⁻⁴)
+     - SWC 7列目は半径 (`SWC Spec`_)
+   * - Conductance (distributed)
+     - g
+     - S/cm²
+     - S/cm²
+     - mS/cm²
+     - あり
+     - popl_func.h (×10³)
+     - `NEURON Unit Chart`_
+   * - Conductance (point process)
+     - g
+     - μS
+     - μS
+     - μS
+     - なし
+     - \-
+     - `NEURON Unit Chart`_
+   * - Cytoplasmic resistivity
+     - Ra
+     - Ω·cm
+     - Ω·cm
+     - kΩ·cm
+     - あり
+     - popl_func.h (×10⁻³)
+     - `NEURON Unit Chart`_
+   * - Resistance
+     - Ri()
+     - 10⁶ Ω
+     - 10⁶ Ω
+     - 10⁶ Ω
+     - なし
+     - カーネル内部で保持
+     - `NEURON Unit Chart`_
+
+その他のパラメータ
+----------------------------------
+
+
+.. list-table::
+   :header-rows: 1
+   :widths: 18 15 15 8 22 22
+
+   * - カテゴリ
+     - NEURON/BMTK
+     - Neulite
+     - 変換
+     - 変換箇所
+     - 出典
+   * - DEPTH
+     - μm
+     - cm
+     - あり
+     - ion_func.h (×10⁻⁴)
+     - `NMODL Transpiler <https://nrn.readthedocs.io/en/latest/nmodl/transpiler/contents/visitors.html#parsing-model-and-constructing-ast>`_
+   * - syn_weight
+     - μS
+     - mS
+     - あり
+     - solver.c (×10⁻³)
+     - `SONATA Developer Guide`_
+
+BMTK → NEURON での変換
+----------------------
+
+BMTKは一部のパラメータを `NEURON <https://www.neuron.yale.edu/neuron/>`_ 単位系に変換して渡します。
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 20 20 35
+
+   * - パラメータ
+     - BMTK入力
+     - NEURON内部
+     - 備考
+   * - Current (point process)
+     - pA
+     - nA
+     - `BMTK Current Clamps`_
+
+
+開発者向け情報
+==============
+
+変換処理の実装箇所
+------------------
+
+**bionetlite (Python)**
+
+bionetliteは単位変換を行わず、Neuliteカーネルが全ての単位変換を担当します。
+bionetliteはフォーマット変換（JSON→CSV等）のみを行い、値はそのまま出力します。
+
+
+* ``convert_ion_channels()``: イオンチャネルJSON → CSV形式変換（値はそのまま）
+* ``convert_morphologies()``: SWCファイルの前処理（インデックス変換、軸索修正、DFSソート）
+
+**Neuliteカーネル (C)**
+
+単位変換はNeuliteカーネルで行われます：
+
+* ``popl_func.h``: Length (μm→cm), Diameter (μm→cm), Ra (Ω·cm→kΩ·cm), Conductance (S→mS)
+* ``ion_func.h``: DEPTH (定数として0.1μm=0.1e-4cmで定義)
+* ``ion.c``: イオン電流計算時の変換 (×10⁻³)
+* ``solver.c``: 外部電流i_ext (pA→nA, ×10⁻³), syn_weight (μS→mS, ×10⁻³)
+
+参考リンク
+==========
+
+* `NEURON Units Guide <https://nrn.readthedocs.io/en/latest/guide/units.html>`_ - NEURON単位系の公式リファレンス
+* `BMTK Current Clamps Documentation <https://alleninstitute.github.io/bmtk/current_clamps.html>`_ - BMTKでの電流単位(pA)の説明
+* `SONATA Developer Guide <https://github.com/AllenInstitute/sonata/blob/master/docs/SONATA_DEVELOPER_GUIDE.md>`_ - syn_weight等のSONATAフォーマット仕様
+* `SWC File Format Specification <http://www.neuronland.org/NLMorphologyConverter/MorphologyFormats/SWC/Spec.html>`_ - SWCファイルの座標単位(μm)の仕様
+* `NMODL Transpiler <https://nrn.readthedocs.io/en/latest/nmodl/transpiler/contents/visitors.html#parsing-model-and-constructing-ast>`_ - DEPTHの単位定義
