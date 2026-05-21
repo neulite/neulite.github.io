@@ -117,6 +117,7 @@ bionetliteは、config.jsonから以下のようなconfig.hを生成します：
    #define TSTOP ( 2000.0 )
    #define DT ( 0.1 )
    #define INV_DT ( ( int ) ( 1.0 / ( DT ) ) )
+   #define ITR_BIT_WIDTH ( 8U )
 
    // Neuron parameters
    #define SPIKE_THRESHOLD ( -15.0 )
@@ -132,6 +133,7 @@ bionetliteは、config.jsonから以下のようなconfig.hを生成します：
 * ``TSTOP``: シミュレーション時間（ms）
 * ``DT``: 時間刻み幅（ms）
 * ``INV_DT``: 1ミリ秒あたりのステップ数（int型）
+* ``ITR_BIT_WIDTH``: 1 ms内のスパイク時刻を保持するビット幅
 * ``SPIKE_THRESHOLD``: スパイク検出閾値（mV）
 * ``ALLACTIVE``: allactiveモデルの使用フラグ（0 or 1）
 * ``I_AMP``: 電流注入の振幅（nA）
@@ -206,7 +208,7 @@ bionetliteは、既存のBMTKのconfig.json形式と完全に互換性があり�
 
 ただし、以下の制限事項に注意してください：
 
-* **delay値**: Neuliteはdelay値を整数（int型）として扱います。config.jsonでは小数も指定できますが、bionetliteが内部で四捨五入して整数に変換します。
+* **delay値**: 小数値を指定できます。1.0 ms未満の値はbionetliteが1.0 msに切り上げます。
 * **入力タイプ**: 現在、``current_clamp`` (IClamp) 形式の入力のみサポートしています。
 
 次のステップ

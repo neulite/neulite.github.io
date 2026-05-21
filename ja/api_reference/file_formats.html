@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ファイル形式 &mdash; Neulite 1.0 ドキュメント</title>
+  <title>ファイル形式 &mdash; Neulite 1.1 ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=739a56bc" />
@@ -14,7 +14,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=6bbe880f"></script>
+      <script src="../_static/documentation_options.js?v=cfc60c16"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="../_static/translations.js?v=4755f45a"></script>
@@ -460,13 +460,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id12">2. 入力方式の制限</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id13">3. シナプスモデルの制限</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id14">4. シナプス接続位置の制限</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id15">5. データ型の制限</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id16">6. Perisomatic modelの注意点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#delay">5. delay値の制限</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id15">6. Perisomatic modelの注意点</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id17">対応状況のまとめ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id18">今後の発展</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id19">次のステップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id16">対応状況のまとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id17">今後の発展</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id18">次のステップ</a></li>
 </ul>
 </li>
 </ul>
@@ -499,7 +499,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../faq.html#id11">トラブルシューティング</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html#module-not-found">&quot;Module not found&quot; エラーが出ます</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html#bionet">接続位置がbionetと異なります</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../faq.html#delay">delay値が整数しか受け付けられません</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#delay">delay値に小数は使えますか？</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html#id12">関連リソース</a></li>
@@ -520,14 +520,18 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">変更履歴</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">バージョン 1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">バージョン 1.1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../changelog.html#id3">更新内容</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">主な成果</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id6">対応環境</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">既知の制限</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id8">今後の予定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">バージョン 1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">更新内容</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">主な成果</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id8">対応環境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id9">既知の制限</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id10">今後の予定</a></li>
 </ul>
 </li>
 </ul>
@@ -695,8 +699,8 @@
 <td><p>Reversal potential (mV)</p></td>
 </tr>
 <tr class="row-odd"><td><p>delay</p></td>
-<td><p>int</p></td>
-<td><p>Synaptic delay (ms, rounded to integer)</p></td>
+<td><p>float</p></td>
+<td><p>Synaptic delay (ms, minimum 1.0)</p></td>
 </tr>
 <tr class="row-even"><td><p>e/i</p></td>
 <td><p>string</p></td>
@@ -708,16 +712,15 @@
 <p class="admonition-title">注釈</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">post</span> <span class="pre">cid</span></code> は <code class="docutils literal notranslate"><span class="pre">target_sections</span></code> で指定されたセクションからランダムにサンプリングされます</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">delay</span></code> は整数値にROUND_HALF_UPで丸められます（2.5は3になる）</p></li>
 </ul>
 </div>
 </section>
 <section id="id9">
 <h3>例<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#pre nid,post nid,post cid,weight,tau_decay,tau_rise,erev,delay,e/i
-0,5,42,0.0005,1.7,0.1,0.0,2,e
-0,8,15,0.0005,1.7,0.1,0.0,2,e
-25,5,12,0.002,8.3,0.5,-70.0,1,i
+0,5,42,0.0005,1.7,0.1,0.0,2.0,e
+0,8,15,0.0005,1.7,0.1,0.0,2.0,e
+25,5,12,0.002,8.3,0.5,-70.0,1.0,i
 </pre></div>
 </div>
 </section>
@@ -798,6 +801,7 @@
 <span class="cp">#define TSTOP ( 3000.0 )</span>
 <span class="cp">#define DT ( 0.1 )</span>
 <span class="cp">#define INV_DT ( ( int ) ( 1.0 / ( DT ) ) )</span>
+<span class="cp">#define ITR_BIT_WIDTH ( 8U )</span>
 
 <span class="c1">// Neuron parameters</span>
 <span class="cp">#define SPIKE_THRESHOLD ( -15.0 )</span>
@@ -816,6 +820,7 @@
 <li><p><strong>TSTOP</strong> (ms) - シミュレーション終了時間</p></li>
 <li><p><strong>DT</strong> (ms) - タイムステップ</p></li>
 <li><p><strong>INV_DT</strong> - タイムステップの逆数（整数）</p></li>
+<li><p><strong>ITR_BIT_WIDTH</strong> - 1 ms内のスパイク時刻を保持するビット幅</p></li>
 <li><p><strong>SPIKE_THRESHOLD</strong> (mV) - スパイク検出閾値</p></li>
 <li><p><strong>ALLACTIVE</strong> - allactiveモデルフラグ（0 or 1）</p></li>
 <li><p><strong>I_AMP</strong> (nA) - 電流注入の振幅</p></li>

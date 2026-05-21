@@ -125,15 +125,14 @@ Neuliteカーネル用のファイルです。
      - float
      - Reversal potential (mV)
    * - delay
-     - int
-     - Synaptic delay (ms, rounded to integer)
+     - float
+     - Synaptic delay (ms, minimum 1.0)
    * - e/i
      - string
      - 'e' (excitatory) or 'i' (inhibitory)
 
 .. note::
    * ``post cid`` は ``target_sections`` で指定されたセクションからランダムにサンプリングされます
-   * ``delay`` は整数値にROUND_HALF_UPで丸められます（2.5は3になる）
 
 例
 --
@@ -141,9 +140,9 @@ Neuliteカーネル用のファイルです。
 .. code-block:: text
 
    #pre nid,post nid,post cid,weight,tau_decay,tau_rise,erev,delay,e/i
-   0,5,42,0.0005,1.7,0.1,0.0,2,e
-   0,8,15,0.0005,1.7,0.1,0.0,2,e
-   25,5,12,0.002,8.3,0.5,-70.0,1,i
+   0,5,42,0.0005,1.7,0.1,0.0,2.0,e
+   0,8,15,0.0005,1.7,0.1,0.0,2.0,e
+   25,5,12,0.002,8.3,0.5,-70.0,1.0,i
 
 swcファイル（処理済み）
 =======================
@@ -233,6 +232,7 @@ Neuliteカーネル用の設定ヘッダーファイルです。
    #define TSTOP ( 3000.0 )
    #define DT ( 0.1 )
    #define INV_DT ( ( int ) ( 1.0 / ( DT ) ) )
+   #define ITR_BIT_WIDTH ( 8U )
 
    // Neuron parameters
    #define SPIKE_THRESHOLD ( -15.0 )
@@ -249,6 +249,7 @@ Neuliteカーネル用の設定ヘッダーファイルです。
 * **TSTOP** (ms) - シミュレーション終了時間
 * **DT** (ms) - タイムステップ
 * **INV_DT** - タイムステップの逆数（整数）
+* **ITR_BIT_WIDTH** - 1 ms内のスパイク時刻を保持するビット幅
 * **SPIKE_THRESHOLD** (mV) - スパイク検出閾値
 * **ALLACTIVE** - allactiveモデルフラグ（0 or 1）
 * **I_AMP** (nA) - 電流注入の振幅

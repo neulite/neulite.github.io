@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>仕様と制限事項 &mdash; Neulite 1.0 ドキュメント</title>
+  <title>仕様と制限事項 &mdash; Neulite 1.1 ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=739a56bc" />
@@ -14,7 +14,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=6bbe880f"></script>
+      <script src="../_static/documentation_options.js?v=cfc60c16"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="../_static/translations.js?v=4755f45a"></script>
@@ -460,13 +460,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#id12">2. 入力方式の制限</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id13">3. シナプスモデルの制限</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id14">4. シナプス接続位置の制限</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id15">5. データ型の制限</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">6. Perisomatic modelの注意点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delay">5. delay値の制限</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">6. Perisomatic modelの注意点</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id17">対応状況のまとめ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id18">今後の発展</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id19">次のステップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">対応状況のまとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">今後の発展</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id18">次のステップ</a></li>
 </ul>
 </li>
 </ul>
@@ -499,7 +499,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../faq.html#id11">トラブルシューティング</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html#module-not-found">&quot;Module not found&quot; エラーが出ます</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html#bionet">接続位置がbionetと異なります</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../faq.html#delay">delay値が整数しか受け付けられません</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#delay">delay値に小数は使えますか？</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html#id12">関連リソース</a></li>
@@ -520,14 +520,18 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">変更履歴</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">バージョン 1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">バージョン 1.1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../changelog.html#id3">更新内容</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">主な成果</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id6">対応環境</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">既知の制限</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id8">今後の予定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">バージョン 1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">更新内容</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">主な成果</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id8">対応環境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id9">既知の制限</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id10">今後の予定</a></li>
 </ul>
 </li>
 </ul>
@@ -649,23 +653,23 @@
 <li><p>✅ 一度生成したNeulite用のbionetliteによる出力は、本来シミュレーション実行時に決める詳細な位置情報を含み、確実に同じネットワークに対してシミュレーションを実行可能</p></li>
 </ul>
 </section>
-<section id="id15">
-<h3>5. データ型の制限<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
-<p><strong>Delay値はint型のみ</strong></p>
+<section id="delay">
+<h3>5. delay値の制限<a class="headerlink" href="#delay" title="Link to this heading"></a></h3>
+<p><strong>Delay値の下限は1.0 ms</strong></p>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
-<p>BMTKのdelay値はdouble型ですが、<strong>Neuliteはint型のみを受け付けます</strong>。</p>
-<p>小数点以下のdelay値を使用する場合は、適切に変換する必要があります。</p>
+<p>1.0 ms未満のdelay値は、bionetliteが <strong>1.0 ms</strong> に切り上げます。</p>
+<p>小数値はNeulite内部でDT単位に変換されます。</p>
 </div>
 </section>
-<section id="id16">
-<h3>6. Perisomatic modelの注意点<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<section id="id15">
+<h3>6. Perisomatic modelの注意点<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
 <p>bionetliteが採用しているPerisomatic modelについては、<a class="reference internal" href="#id7"><span class="std std-ref">形態モデル</span></a> セクションを参照してください。</p>
 <p>特に、実際の軸索形態が簡略化された人工軸索に置き換えられることに注意が必要です。</p>
 </section>
 </section>
-<section id="id17">
-<h2>対応状況のまとめ<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<section id="id16">
+<h2>対応状況のまとめ<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 40.0%" />
@@ -722,12 +726,12 @@
 </tbody>
 </table>
 </section>
-<section id="id18">
-<h2>今後の発展<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+<section id="id17">
+<h2>今後の発展<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <p>bionetlite、Neuliteは現在最小の実装と富岳向けの報告が行われていますが、今後の発展に伴いこれらの仕様は変更される可能性があります。</p>
 </section>
-<section id="id19">
-<h2>次のステップ<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
+<section id="id18">
+<h2>次のステップ<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../tutorials/tutorial01_single_cell.html"><span class="doc">Tutorial 1: 単一細胞の定常電流入力</span></a> - 実践的な使用例</p></li>
 </ul>

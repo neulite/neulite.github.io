@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>File Formats &mdash; Neulite 1.0 documentation</title>
+  <title>File Formats &mdash; Neulite 1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=739a56bc" />
@@ -14,7 +14,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../_static/documentation_options.js?v=56dcb7b8"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -459,13 +459,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id12">2. Input Method Limitations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id13">3. Synapse Model Limitations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id14">4. Synapse Connection Position Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id15">5. Data Type Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id16">6. Notes on Perisomatic Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#delay">5. Delay Value Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id15">6. Notes on Perisomatic Model</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id17">Summary of Support Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id18">Future Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id19">Next Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id16">Summary of Support Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id17">Future Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id18">Next Steps</a></li>
 </ul>
 </li>
 </ul>
@@ -498,7 +498,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../faq.html#id11">Troubleshooting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html#module-not-found">“Module not found” error</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html#bionet">Connection positions are different from bionet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../faq.html#delay">Delay value accepts only integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#delay">Can I use decimal delay values?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html#id12">Related Resources</a></li>
@@ -519,14 +519,18 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">Version 1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">Version 1.1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../changelog.html#id3">Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">Key Achievements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id6">Supported Environments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">Known Limitations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id8">Future Plans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">Version 1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">Key Achievements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id8">Supported Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id9">Known Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id10">Future Plans</a></li>
 </ul>
 </li>
 </ul>
@@ -694,8 +698,8 @@
 <td><p>Reversal potential (mV)</p></td>
 </tr>
 <tr class="row-odd"><td><p>delay</p></td>
-<td><p>int</p></td>
-<td><p>Synaptic delay (ms, rounded to integer)</p></td>
+<td><p>float</p></td>
+<td><p>Synaptic delay (ms, minimum 1.0)</p></td>
 </tr>
 <tr class="row-even"><td><p>e/i</p></td>
 <td><p>string</p></td>
@@ -707,16 +711,15 @@
 <p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">post</span> <span class="pre">cid</span></code> is randomly sampled from sections specified by <code class="docutils literal notranslate"><span class="pre">target_sections</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">delay</span></code> is rounded to integer using ROUND_HALF_UP (2.5 becomes 3)</p></li>
 </ul>
 </div>
 </section>
 <section id="id9">
 <h3>Example<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#pre nid,post nid,post cid,weight,tau_decay,tau_rise,erev,delay,e/i
-0,5,42,0.0005,1.7,0.1,0.0,2,e
-0,8,15,0.0005,1.7,0.1,0.0,2,e
-25,5,12,0.002,8.3,0.5,-70.0,1,i
+0,5,42,0.0005,1.7,0.1,0.0,2.0,e
+0,8,15,0.0005,1.7,0.1,0.0,2.0,e
+25,5,12,0.002,8.3,0.5,-70.0,1.0,i
 </pre></div>
 </div>
 </section>
@@ -797,6 +800,7 @@
 <span class="cp">#define TSTOP ( 3000.0 )</span>
 <span class="cp">#define DT ( 0.1 )</span>
 <span class="cp">#define INV_DT ( ( int ) ( 1.0 / ( DT ) ) )</span>
+<span class="cp">#define ITR_BIT_WIDTH ( 8U )</span>
 
 <span class="c1">// Neuron parameters</span>
 <span class="cp">#define SPIKE_THRESHOLD ( -15.0 )</span>
@@ -815,6 +819,7 @@
 <li><p><strong>TSTOP</strong> (ms) - Simulation end time</p></li>
 <li><p><strong>DT</strong> (ms) - Time step</p></li>
 <li><p><strong>INV_DT</strong> - Inverse of time step (integer)</p></li>
+<li><p><strong>ITR_BIT_WIDTH</strong> - Bit width for storing spike timing within 1 ms</p></li>
 <li><p><strong>SPIKE_THRESHOLD</strong> (mV) - Spike detection threshold</p></li>
 <li><p><strong>ALLACTIVE</strong> - allactive model flag (0 or 1)</p></li>
 <li><p><strong>I_AMP</strong> (nA) - Amplitude of current injection</p></li>

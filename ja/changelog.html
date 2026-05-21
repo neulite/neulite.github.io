@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>変更履歴 &mdash; Neulite 1.0 ドキュメント</title>
+  <title>変更履歴 &mdash; Neulite 1.1 ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=739a56bc" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=6bbe880f"></script>
+      <script src="_static/documentation_options.js?v=cfc60c16"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/translations.js?v=4755f45a"></script>
@@ -459,13 +459,13 @@
 <li class="toctree-l3"><a class="reference internal" href="advanced/specification.html#id12">2. 入力方式の制限</a></li>
 <li class="toctree-l3"><a class="reference internal" href="advanced/specification.html#id13">3. シナプスモデルの制限</a></li>
 <li class="toctree-l3"><a class="reference internal" href="advanced/specification.html#id14">4. シナプス接続位置の制限</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced/specification.html#id15">5. データ型の制限</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced/specification.html#id16">6. Perisomatic modelの注意点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced/specification.html#delay">5. delay値の制限</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced/specification.html#id15">6. Perisomatic modelの注意点</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="advanced/specification.html#id17">対応状況のまとめ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced/specification.html#id18">今後の発展</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced/specification.html#id19">次のステップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/specification.html#id16">対応状況のまとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/specification.html#id17">今後の発展</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/specification.html#id18">次のステップ</a></li>
 </ul>
 </li>
 </ul>
@@ -498,7 +498,7 @@
 <li class="toctree-l2"><a class="reference internal" href="faq.html#id11">トラブルシューティング</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faq.html#module-not-found">&quot;Module not found&quot; エラーが出ます</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faq.html#bionet">接続位置がbionetと異なります</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faq.html#delay">delay値が整数しか受け付けられません</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#delay">delay値に小数は使えますか？</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#id12">関連リソース</a></li>
@@ -519,14 +519,18 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">変更履歴</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">バージョン 1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">バージョン 1.1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id3">更新内容</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">主な成果</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">対応環境</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">既知の制限</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">今後の予定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">バージョン 1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">更新内容</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">主な成果</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">対応環境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">既知の制限</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">今後の予定</a></li>
 </ul>
 </li>
 </ul>
@@ -558,11 +562,36 @@
   <section id="id1">
 <h1>変更履歴<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <section id="id2">
-<h2>バージョン 1.0<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
-<p><em>初回リリース</em></p>
-<p>Neuliteプロジェクトの初回公開版です。</p>
+<h2>バージョン 1.1<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>スパイク伝播およびニューロン計算ロジックに関するメジャーアップデート</p>
 <section id="id3">
 <h3>更新内容<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p><strong>bionetlite</strong> v1.1.0</p>
+<ul class="simple">
+<li><p>シナプス接続におけるfloat型delay値のサポート</p></li>
+</ul>
+<p><strong>Neuliteカーネル</strong> v1.1.0</p>
+<ul class="simple">
+<li><p>スパイク時刻の時間分解能を 1ms から dt へ変更</p></li>
+<li><p>シナプス接続におけるfloat型delay値のサポート</p></li>
+<li><p>ニューロン初期化及びソルバー計算順序に関する問題を修正</p></li>
+<li><p>軸方向コンダクタンス計算を円錐台近似に修正</p></li>
+<li><p>soma コンパートメントへのゼロ抵抗 wired connection の問題を修正</p></li>
+<li><p>update_matrix() における Nap イオンチャネル効果の計算を修正</p></li>
+<li><p>非推奨である sglexp* 関連フレーバを削除</p></li>
+</ul>
+</section>
+</section>
+<section id="id4">
+<h2>バージョン 1.0<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p><em>初回リリース</em></p>
+<p>Neuliteプロジェクトの初回公開版です。</p>
+<section id="id5">
+<h3>更新内容<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p><strong>bionetlite</strong> v1.0.2</p>
+<ul class="simple">
+<li><p>エッジ処理のベクトル化による高速化</p></li>
+</ul>
 <p><strong>bionetlite</strong> v1.0.1</p>
 <ul class="simple">
 <li><p>チュートリアル用の自動環境セットアップ機能を追加</p>
@@ -583,8 +612,8 @@
 </ul>
 <p>スーパーコンピュータ「<a class="reference external" href="https://www.r-ccs.riken.jp/en/fugaku/">富岳</a>」での大規模生物物理学的ニューロンシミュレーションを実現します。</p>
 </section>
-<section id="id5">
-<h3>主な成果<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<section id="id7">
+<h3>主な成果<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <p><strong>大規模シミュレーション実績</strong></p>
 <ul class="simple">
 <li><p>900万個のニューロンと2600億個のシナプスを含むマウス全皮質モデルのシミュレーションを実現</p></li>
@@ -648,8 +677,8 @@
 <li><p>FAQ</p></li>
 </ul>
 </section>
-<section id="id6">
-<h3>対応環境<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<section id="id8">
+<h3>対応環境<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>Linux（推奨）</p></li>
 <li><p>macOS</p></li>
@@ -657,8 +686,8 @@
 <li><p>MPI環境（並列実行時）</p></li>
 </ul>
 </section>
-<section id="id7">
-<h3>既知の制限<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<section id="id9">
+<h3>既知の制限<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <p><strong>対応モデル:</strong></p>
 <ul class="simple">
 <li><p>biophysicalモデルのみ対応（point neuron、virtual neuronは非対応）</p></li>
@@ -675,13 +704,13 @@
 </ul>
 <p><strong>その他:</strong></p>
 <ul class="simple">
-<li><p>delay値はint型のみ対応（小数点以下は丸められる）</p></li>
+<li><p>1.0 ms未満のdelay値はbionetliteが1.0 msに切り上げる</p></li>
 <li><p>シナプス接続位置はネットワーク構築時にランダムに決定（bionetとは異なる）</p></li>
 </ul>
 </section>
 </section>
-<section id="id8">
-<h2>今後の予定<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<section id="id10">
+<h2>今後の予定<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>スパイク入力機能の追加（Neulite側での実装）</p></li>
 <li><p>新しいシナプスモデルのサポート</p></li>

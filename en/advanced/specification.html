@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Specifications and Limitations &mdash; Neulite 1.0 documentation</title>
+  <title>Specifications and Limitations &mdash; Neulite 1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=739a56bc" />
@@ -14,7 +14,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../_static/documentation_options.js?v=56dcb7b8"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -459,13 +459,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#id12">2. Input Method Limitations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id13">3. Synapse Model Limitations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id14">4. Synapse Connection Position Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id15">5. Data Type Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">6. Notes on Perisomatic Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delay">5. Delay Value Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">6. Notes on Perisomatic Model</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id17">Summary of Support Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id18">Future Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id19">Next Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">Summary of Support Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">Future Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id18">Next Steps</a></li>
 </ul>
 </li>
 </ul>
@@ -498,7 +498,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../faq.html#id11">Troubleshooting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html#module-not-found">“Module not found” error</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html#bionet">Connection positions are different from bionet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../faq.html#delay">Delay value accepts only integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#delay">Can I use decimal delay values?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html#id12">Related Resources</a></li>
@@ -519,14 +519,18 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">Version 1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">Version 1.1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../changelog.html#id3">Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">Key Achievements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id6">Supported Environments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">Known Limitations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id8">Future Plans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">Version 1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">Key Achievements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id8">Supported Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id9">Known Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id10">Future Plans</a></li>
 </ul>
 </li>
 </ul>
@@ -648,23 +652,23 @@
 <li><p>✅ The output from bionetlite for Neulite generated once includes the detailed position information that would normally be determined at simulation runtime, and can reliably execute simulations on the same network</p></li>
 </ul>
 </section>
-<section id="id15">
-<h3>5. Data Type Limitations<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
-<p><strong>Delay values must be int type only</strong></p>
+<section id="delay">
+<h3>5. Delay Value Limitations<a class="headerlink" href="#delay" title="Link to this heading"></a></h3>
+<p><strong>Minimum delay value is 1.0 ms</strong></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>BMTK delay values are double type, but <strong>Neulite only accepts int type</strong>.</p>
-<p>If using delay values with decimals, appropriate conversion is needed.</p>
+<p>bionetlite raises delay values below 1.0 ms to <strong>1.0 ms</strong>.</p>
+<p>Decimal values are converted to DT units inside Neulite.</p>
 </div>
 </section>
-<section id="id16">
-<h3>6. Notes on Perisomatic Model<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<section id="id15">
+<h3>6. Notes on Perisomatic Model<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
 <p>For information on the Perisomatic model used by bionetlite, see the <span class="xref std std-ref">Morphology Models</span> section.</p>
 <p>It is important to note that actual axon morphology is replaced with a simplified artificial axon.</p>
 </section>
 </section>
-<section id="id17">
-<h2>Summary of Support Status<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<section id="id16">
+<h2>Summary of Support Status<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 40.0%" />
@@ -721,12 +725,12 @@
 </tbody>
 </table>
 </section>
-<section id="id18">
-<h2>Future Development<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+<section id="id17">
+<h2>Future Development<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <p>bionetlite and Neulite currently have minimal implementation and are being reported for Fugaku, but these specifications may change with future development.</p>
 </section>
-<section id="id19">
-<h2>Next Steps<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
+<section id="id18">
+<h2>Next Steps<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../tutorials/tutorial01_single_cell.html"><span class="doc">Tutorial 1: Steady-State Current Injection in a Single Cell</span></a> - Practical usage examples</p></li>
 </ul>

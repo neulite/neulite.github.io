@@ -63,7 +63,7 @@ add_edges()
        target={'pop_name': 'Inh'},         # Target population
        connection_rule=5,                  # Number of connections or probability
        syn_weight=0.001,                   # Synaptic weight
-       delay=2.0,                          # Delay (ms, rounded to integer)
+       delay=2.0,                          # Delay (ms)
        target_sections=['somatic', 'basal'],  # Target sections
        dynamics_params='ExcToInh.json'     # Synapse parameters
    )

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuration &mdash; Neulite 1.0 documentation</title>
+  <title>Configuration &mdash; Neulite 1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=739a56bc" />
@@ -14,7 +14,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../_static/documentation_options.js?v=56dcb7b8"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
@@ -459,13 +459,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id12">2. Input Method Limitations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id13">3. Synapse Model Limitations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id14">4. Synapse Connection Position Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id15">5. Data Type Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id16">6. Notes on Perisomatic Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#delay">5. Delay Value Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/specification.html#id15">6. Notes on Perisomatic Model</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id17">Summary of Support Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id18">Future Development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id19">Next Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id16">Summary of Support Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id17">Future Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/specification.html#id18">Next Steps</a></li>
 </ul>
 </li>
 </ul>
@@ -498,7 +498,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../faq.html#id11">Troubleshooting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html#module-not-found">“Module not found” error</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html#bionet">Connection positions are different from bionet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../faq.html#delay">Delay value accepts only integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#delay">Can I use decimal delay values?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html#id12">Related Resources</a></li>
@@ -519,14 +519,18 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">Version 1.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">Version 1.1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../changelog.html#id3">Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">Key Achievements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id6">Supported Environments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">Known Limitations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id8">Future Plans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">Version 1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id5">Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id7">Key Achievements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id8">Supported Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../changelog.html#id9">Known Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id10">Future Plans</a></li>
 </ul>
 </li>
 </ul>
@@ -663,6 +667,7 @@
 <span class="cp">#define TSTOP ( 2000.0 )</span>
 <span class="cp">#define DT ( 0.1 )</span>
 <span class="cp">#define INV_DT ( ( int ) ( 1.0 / ( DT ) ) )</span>
+<span class="cp">#define ITR_BIT_WIDTH ( 8U )</span>
 
 <span class="c1">// Neuron parameters</span>
 <span class="cp">#define SPIKE_THRESHOLD ( -15.0 )</span>
@@ -679,6 +684,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">TSTOP</span></code>: Simulation time (ms)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">DT</span></code>: Time step (ms)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">INV_DT</span></code>: Number of steps per millisecond (int type)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITR_BIT_WIDTH</span></code>: Bit width for storing spike timing within 1 ms</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SPIKE_THRESHOLD</span></code>: Spike detection threshold (mV)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ALLACTIVE</span></code>: Flag for using allactive model (0 or 1)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">I_AMP</span></code>: Amplitude of current injection (nA)</p></li>
@@ -745,7 +751,7 @@
 <p>bionetlite is fully compatible with the existing BMTK config.json format. You can use the config.json used in BMTK as is.</p>
 <p>However, note the following limitations:</p>
 <ul class="simple">
-<li><p><strong>delay value</strong>: Neulite treats delay values as integers (int type). While decimals can be specified in config.json, bionetlite internally rounds and converts to integer.</p></li>
+<li><p><strong>delay value</strong>: Decimal values can be specified. bionetlite raises values below 1.0 ms to 1.0 ms.</p></li>
 <li><p><strong>Input type</strong>: Currently, only <code class="docutils literal notranslate"><span class="pre">current_clamp</span></code> (IClamp) format input is supported.</p></li>
 </ul>
 </section>
