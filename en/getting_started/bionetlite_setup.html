@@ -587,6 +587,14 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 <h3>Step 2: Install BMTK and NEURON<a class="headerlink" href="#bmtkneuron" title="Link to this heading"></a></h3>
 <p>bionetlite depends on <a class="reference external" href="https://alleninstitute.github.io/bmtk/">Brain Modeling Toolkit (BMTK)</a> and <a class="reference external" href="https://www.neuron.yale.edu/neuron/">NEURON</a>.</p>
 <p><strong>Installing BMTK:</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As of May 2026, the latest version of BMTK may have compatibility issues with pandas 3.x and NumPy 2.x. For environments that use BMTK, pandas 2.x and NumPy 1.x are recommended.</p>
+<p>If pandas 3.x or NumPy 2.x is already installed, change the versions as shown below.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;pandas&lt;3&quot;</span><span class="w"> </span><span class="s2">&quot;numpy&lt;2&quot;</span>
+</pre></div>
+</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>bmtk
 </pre></div>
 </div>

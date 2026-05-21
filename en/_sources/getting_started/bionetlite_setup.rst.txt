@@ -35,6 +35,16 @@ bionetliteは`Brain Modeling Toolkit (BMTK) <https://alleninstitute.github.io/bm
 
 **BMTKのインストール:**
 
+.. warning::
+   2026年5月時点では、BMTKの最新版はpandas 3.x 系やNumPy 2.x 系との互換性に問題がある場合があります。
+   BMTKを使用する環境では、pandas 2.x 系およびNumPy 1.x 系の利用を推奨します。
+
+   既にpandas 3.x 系またはNumPy 2.x 系がインストールされている場合は、以下のようにバージョンを変更してください。
+
+   .. code-block:: bash
+
+      pip install "pandas<3" "numpy<2"
+
 .. code-block:: bash
 
    pip install bmtk

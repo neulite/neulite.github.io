@@ -588,6 +588,15 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 <h3>ステップ2: BMTKとNEURONのインストール<a class="headerlink" href="#bmtkneuron" title="Link to this heading"></a></h3>
 <p>bionetliteは`Brain Modeling Toolkit (BMTK) &lt;<a class="reference external" href="https://alleninstitute.github.io/bmtk/">https://alleninstitute.github.io/bmtk/</a>&gt;`__と <a class="reference external" href="https://www.neuron.yale.edu/neuron/">NEURON</a> に依存しています。</p>
 <p><strong>BMTKのインストール:</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>2026年5月時点では、BMTKの最新版はpandas 3.x 系やNumPy 2.x 系との互換性に問題がある場合があります。
+BMTKを使用する環境では、pandas 2.x 系およびNumPy 1.x 系の利用を推奨します。</p>
+<p>既にpandas 3.x 系またはNumPy 2.x 系がインストールされている場合は、以下のようにバージョンを変更してください。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;pandas&lt;3&quot;</span><span class="w"> </span><span class="s2">&quot;numpy&lt;2&quot;</span>
+</pre></div>
+</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>bmtk
 </pre></div>
 </div>
