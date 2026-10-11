@@ -46,9 +46,9 @@ bionetliteでネットワークを構築する際に指定するパラメータ�
      - 説明
      - 例
    * - amp
-     - pA
+     - nA
      - 電流注入の強度
-     - 100.0
+     - 0.12
    * - delay
      - ms
      - 電流注入の開始時刻
@@ -59,7 +59,7 @@ bionetliteでネットワークを構築する際に指定するパラメータ�
      - 1000.0
 
 .. note::
-   BMTKでは電流をpA単位で指定します。詳細は `BMTK Current Clamps <https://alleninstitute.github.io/bmtk/current_clamps.html>`_ を参照してください。
+   電流注入の振幅はBMTK・NEURONともにnA単位です。BMTKは ``amp`` の値を変換せずNEURONの ``IClamp.amp`` （単位nA）へ渡します。
 
 シナプスパラメータ
 ------------------
@@ -110,7 +110,7 @@ SWCファイルやイオンチャネルJSONファイルは `NEURON <https://www.
      - SWCファイルの3D座標
    * - 半径 (r)
      - μm
-     - SWCファイルの7列目（直径ではなく半径）
+     - SWCファイルの6列目（直径ではなく半径）
    * - Cm
      - μF/cm²
      - 膜容量
@@ -133,7 +133,6 @@ NEURON列の単位は `NEURON Units Guide <https://nrn.readthedocs.io/en/latest/
 .. _NEURON Unit Chart: https://nrn.readthedocs.io/en/latest/guide/units.html
 .. _SONATA Developer Guide: https://github.com/AllenInstitute/sonata/blob/master/docs/SONATA_DEVELOPER_GUIDE.md
 .. _SWC Spec: http://www.neuronland.org/NLMorphologyConverter/MorphologyFormats/SWC/Spec.html
-.. _BMTK Current Clamps: https://alleninstitute.github.io/bmtk/current_clamps.html
 
 単位系一覧
 ----------
@@ -177,11 +176,11 @@ NEURON列の単位は `NEURON Units Guide <https://nrn.readthedocs.io/en/latest/
    * - Current (point process)
      - i
      - nA
-     - pA
      - nA
+     - μA
      - あり
      - solver.c (×10⁻³)
-     - `BMTK Current Clamps`_
+     - `NEURON Unit Chart`_
    * - Concentration
      - ko, ki
      - mM
@@ -213,7 +212,7 @@ NEURON列の単位は `NEURON Units Guide <https://nrn.readthedocs.io/en/latest/
      - cm
      - あり
      - popl_func.h (×10⁻⁴)
-     - SWC 7列目は半径 (`SWC Spec`_)
+     - SWC 6列目は半径 (`SWC Spec`_)
    * - Conductance (distributed)
      - g
      - S/cm²
@@ -221,14 +220,6 @@ NEURON列の単位は `NEURON Units Guide <https://nrn.readthedocs.io/en/latest/
      - mS/cm²
      - あり
      - popl_func.h (×10³)
-     - `NEURON Unit Chart`_
-   * - Conductance (point process)
-     - g
-     - μS
-     - μS
-     - μS
-     - なし
-     - \-
      - `NEURON Unit Chart`_
    * - Cytoplasmic resistivity
      - Ra
@@ -274,24 +265,6 @@ NEURON列の単位は `NEURON Units Guide <https://nrn.readthedocs.io/en/latest/
      - solver.c (×10⁻³)
      - `SONATA Developer Guide`_
 
-BMTK → NEURON での変換
-----------------------
-
-BMTKは一部のパラメータを `NEURON <https://www.neuron.yale.edu/neuron/>`_ 単位系に変換して渡します。
-
-.. list-table::
-   :header-rows: 1
-   :widths: 25 20 20 35
-
-   * - パラメータ
-     - BMTK入力
-     - NEURON内部
-     - 備考
-   * - Current (point process)
-     - pA
-     - nA
-     - `BMTK Current Clamps`_
-
 
 開発者向け情報
 ==============
@@ -315,13 +288,13 @@ bionetliteはフォーマット変換（JSON→CSV等）のみを行い、値は
 * ``popl_func.h``: Length (μm→cm), Diameter (μm→cm), Ra (Ω·cm→kΩ·cm), Conductance (S→mS)
 * ``ion_func.h``: DEPTH (定数として0.1μm=0.1e-4cmで定義)
 * ``ion.c``: イオン電流計算時の変換 (×10⁻³)
-* ``solver.c``: 外部電流i_ext (pA→nA, ×10⁻³), syn_weight (μS→mS, ×10⁻³)
+* ``solver.c``: 外部電流i_ext (nA→μA, ×10⁻³), syn_weight (μS→mS, ×10⁻³)
 
 参考リンク
 ==========
 
 * `NEURON Units Guide <https://nrn.readthedocs.io/en/latest/guide/units.html>`_ - NEURON単位系の公式リファレンス
-* `BMTK Current Clamps Documentation <https://alleninstitute.github.io/bmtk/current_clamps.html>`_ - BMTKでの電流単位(pA)の説明
+* `BMTK Current Clamps Documentation <https://alleninstitute.github.io/bmtk/current_clamps.html>`_ - BMTKでの電流注入(IClamp)の指定方法
 * `SONATA Developer Guide <https://github.com/AllenInstitute/sonata/blob/master/docs/SONATA_DEVELOPER_GUIDE.md>`_ - syn_weight等のSONATAフォーマット仕様
 * `SWC File Format Specification <http://www.neuronland.org/NLMorphologyConverter/MorphologyFormats/SWC/Spec.html>`_ - SWCファイルの座標単位(μm)の仕様
 * `NMODL Transpiler <https://nrn.readthedocs.io/en/latest/nmodl/transpiler/contents/visitors.html#parsing-model-and-constructing-ast>`_ - DEPTHの単位定義

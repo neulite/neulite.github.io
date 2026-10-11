@@ -405,16 +405,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id6">Unit Conversions in Internal Processing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id9">Unit System List</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id10">Other Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#bmtk-neuron">Conversion from BMTK to NEURON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id8">Unit System List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id9">Other Parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id12">Developer Information</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id13">Conversion Implementation Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id10">Developer Information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id11">Conversion Implementation Locations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id14">Reference Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id12">Reference Links</a></li>
 </ul>
 </li>
 </ul>
@@ -590,31 +589,31 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bionetlite</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeuliteBuilder</span> <span class="k">as</span> <span class="n">NetworkBuilder</span>
 
 <span class="c1"># Create network</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;mcortex&#39;</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">'mcortex'</span><span class="p">)</span>
 
 <span class="c1"># Add biophysical neurons</span>
 <span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span>
     <span class="n">N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">pop_name</span><span class="o">=</span><span class="s1">&#39;Scnn1a&#39;</span><span class="p">,</span>
-    <span class="n">model_type</span><span class="o">=</span><span class="s1">&#39;biophysical&#39;</span><span class="p">,</span>
-    <span class="n">model_template</span><span class="o">=</span><span class="s1">&#39;ctdb:Biophys1.hoc&#39;</span><span class="p">,</span>
-    <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">&#39;472363762_fit.json&#39;</span><span class="p">,</span>
-    <span class="n">morphology</span><span class="o">=</span><span class="s1">&#39;Scnn1a_473845048_m.swc&#39;</span>
+    <span class="n">pop_name</span><span class="o">=</span><span class="s1">'Scnn1a'</span><span class="p">,</span>
+    <span class="n">model_type</span><span class="o">=</span><span class="s1">'biophysical'</span><span class="p">,</span>
+    <span class="n">model_template</span><span class="o">=</span><span class="s1">'ctdb:Biophys1.hoc'</span><span class="p">,</span>
+    <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">'472363762_fit.json'</span><span class="p">,</span>
+    <span class="n">morphology</span><span class="o">=</span><span class="s1">'Scnn1a_473845048_m.swc'</span>
 <span class="p">)</span>
 
 <span class="c1"># Add Virtual cells for input</span>
 <span class="c1"># Note: bionetlite ignores Virtual cells</span>
 <span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span>
     <span class="n">N</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">pop_name</span><span class="o">=</span><span class="s1">&#39;input&#39;</span><span class="p">,</span>
-    <span class="n">model_type</span><span class="o">=</span><span class="s1">&#39;virtual&#39;</span>
+    <span class="n">pop_name</span><span class="o">=</span><span class="s1">'input'</span><span class="p">,</span>
+    <span class="n">model_type</span><span class="o">=</span><span class="s1">'virtual'</span>
 <span class="p">)</span>
 
 <span class="c1"># Build network</span>
 <span class="n">net</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
 <span class="c1"># Save to files</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;sim_ch02/network&#39;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'sim_ch02/network'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

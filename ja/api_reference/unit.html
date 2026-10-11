@@ -406,16 +406,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id6">内部処理での単位変換</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id9">単位系一覧</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">その他のパラメータ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bmtk-neuron">BMTK → NEURON での変換</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">単位系一覧</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">その他のパラメータ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">開発者向け情報</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id13">変換処理の実装箇所</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">開発者向け情報</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">変換処理の実装箇所</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id14">参考リンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">参考リンク</a></li>
 </ul>
 </li>
 </ul>
@@ -620,9 +619,9 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>amp</p></td>
-<td><p>pA</p></td>
+<td><p>nA</p></td>
 <td><p>電流注入の強度</p></td>
-<td><p>100.0</p></td>
+<td><p>0.12</p></td>
 </tr>
 <tr class="row-odd"><td><p>delay</p></td>
 <td><p>ms</p></td>
@@ -638,7 +637,7 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>BMTKでは電流をpA単位で指定します。詳細は <a class="reference external" href="https://alleninstitute.github.io/bmtk/current_clamps.html">BMTK Current Clamps</a> を参照してください。</p>
+<p>電流注入の振幅はBMTK・NEURONともにnA単位です。BMTKは <code class="docutils literal notranslate"><span class="pre">amp</span></code> の値を変換せずNEURONの <code class="docutils literal notranslate"><span class="pre">IClamp.amp</span></code> （単位nA）へ渡します。</p>
 </div>
 </section>
 <section id="id4">
@@ -708,7 +707,7 @@
 </tr>
 <tr class="row-odd"><td><p>半径 (r)</p></td>
 <td><p>μm</p></td>
-<td><p>SWCファイルの7列目（直径ではなく半径）</p></td>
+<td><p>SWCファイルの6列目（直径ではなく半径）</p></td>
 </tr>
 <tr class="row-even"><td><p>Cm</p></td>
 <td><p>μF/cm²</p></td>
@@ -734,8 +733,8 @@
 <h2>内部処理での単位変換<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
 <p>参考のため、<a class="reference external" href="https://www.neuron.yale.edu/neuron/">NEURON</a> のデフォルト単位系-Neulite間の単位変換処理の一覧を示します。
 NEURON列の単位は <a class="reference external" href="https://nrn.readthedocs.io/en/latest/guide/units.html">NEURON Units Guide</a> に基づくデフォルト単位系です。</p>
-<section id="id9">
-<h3>単位系一覧<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<section id="id8">
+<h3>単位系一覧<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 16.0%" />
@@ -789,11 +788,11 @@ NEURON列の単位は <a class="reference external" href="https://nrn.readthedoc
 <tr class="row-odd"><td><p>Current (point process)</p></td>
 <td><p>i</p></td>
 <td><p>nA</p></td>
-<td><p>pA</p></td>
 <td><p>nA</p></td>
+<td><p>μA</p></td>
 <td><p>あり</p></td>
 <td><p>solver.c (×10⁻³)</p></td>
-<td><p><a class="reference external" href="https://alleninstitute.github.io/bmtk/current_clamps.html">BMTK Current Clamps</a></p></td>
+<td><p><a class="reference external" href="https://nrn.readthedocs.io/en/latest/guide/units.html">NEURON Unit Chart</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Concentration</p></td>
 <td><p>ko, ki</p></td>
@@ -829,7 +828,7 @@ NEURON列の単位は <a class="reference external" href="https://nrn.readthedoc
 <td><p>cm</p></td>
 <td><p>あり</p></td>
 <td><p>popl_func.h (×10⁻⁴)</p></td>
-<td><p>SWC 7列目は半径 (<a class="reference external" href="http://www.neuronland.org/NLMorphologyConverter/MorphologyFormats/SWC/Spec.html">SWC Spec</a>)</p></td>
+<td><p>SWC 6列目は半径 (<a class="reference external" href="http://www.neuronland.org/NLMorphologyConverter/MorphologyFormats/SWC/Spec.html">SWC Spec</a>)</p></td>
 </tr>
 <tr class="row-even"><td><p>Conductance (distributed)</p></td>
 <td><p>g</p></td>
@@ -840,16 +839,7 @@ NEURON列の単位は <a class="reference external" href="https://nrn.readthedoc
 <td><p>popl_func.h (×10³)</p></td>
 <td><p><a class="reference external" href="https://nrn.readthedocs.io/en/latest/guide/units.html">NEURON Unit Chart</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>Conductance (point process)</p></td>
-<td><p>g</p></td>
-<td><p>μS</p></td>
-<td><p>μS</p></td>
-<td><p>μS</p></td>
-<td><p>なし</p></td>
-<td><p>-</p></td>
-<td><p><a class="reference external" href="https://nrn.readthedocs.io/en/latest/guide/units.html">NEURON Unit Chart</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Cytoplasmic resistivity</p></td>
+<tr class="row-odd"><td><p>Cytoplasmic resistivity</p></td>
 <td><p>Ra</p></td>
 <td><p>Ω·cm</p></td>
 <td><p>Ω·cm</p></td>
@@ -858,7 +848,7 @@ NEURON列の単位は <a class="reference external" href="https://nrn.readthedoc
 <td><p>popl_func.h (×10⁻³)</p></td>
 <td><p><a class="reference external" href="https://nrn.readthedocs.io/en/latest/guide/units.html">NEURON Unit Chart</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>Resistance</p></td>
+<tr class="row-even"><td><p>Resistance</p></td>
 <td><p>Ri()</p></td>
 <td><p>10⁶ Ω</p></td>
 <td><p>10⁶ Ω</p></td>
@@ -870,8 +860,8 @@ NEURON列の単位は <a class="reference external" href="https://nrn.readthedoc
 </tbody>
 </table>
 </section>
-<section id="id10">
-<h3>その他のパラメータ<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<section id="id9">
+<h3>その他のパラメータ<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18.0%" />
@@ -908,37 +898,11 @@ NEURON列の単位は <a class="reference external" href="https://nrn.readthedoc
 </tbody>
 </table>
 </section>
-<section id="bmtk-neuron">
-<h3>BMTK → NEURON での変換<a class="headerlink" href="#bmtk-neuron" title="Link to this heading"></a></h3>
-<p>BMTKは一部のパラメータを <a class="reference external" href="https://www.neuron.yale.edu/neuron/">NEURON</a> 単位系に変換して渡します。</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 25.0%" />
-<col style="width: 20.0%" />
-<col style="width: 20.0%" />
-<col style="width: 35.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>パラメータ</p></th>
-<th class="head"><p>BMTK入力</p></th>
-<th class="head"><p>NEURON内部</p></th>
-<th class="head"><p>備考</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Current (point process)</p></td>
-<td><p>pA</p></td>
-<td><p>nA</p></td>
-<td><p><a class="reference external" href="https://alleninstitute.github.io/bmtk/current_clamps.html">BMTK Current Clamps</a></p></td>
-</tr>
-</tbody>
-</table>
 </section>
-</section>
-<section id="id12">
-<h2>開発者向け情報<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
-<section id="id13">
-<h3>変換処理の実装箇所<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<section id="id10">
+<h2>開発者向け情報<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<section id="id11">
+<h3>変換処理の実装箇所<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
 <p><strong>bionetlite (Python)</strong></p>
 <p>bionetliteは単位変換を行わず、Neuliteカーネルが全ての単位変換を担当します。
 bionetliteはフォーマット変換（JSON→CSV等）のみを行い、値はそのまま出力します。</p>
@@ -952,15 +916,15 @@ bionetliteはフォーマット変換（JSON→CSV等）のみを行い、値は
 <li><p><code class="docutils literal notranslate"><span class="pre">popl_func.h</span></code>: Length (μm→cm), Diameter (μm→cm), Ra (Ω·cm→kΩ·cm), Conductance (S→mS)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ion_func.h</span></code>: DEPTH (定数として0.1μm=0.1e-4cmで定義)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ion.c</span></code>: イオン電流計算時の変換 (×10⁻³)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">solver.c</span></code>: 外部電流i_ext (pA→nA, ×10⁻³), syn_weight (μS→mS, ×10⁻³)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">solver.c</span></code>: 外部電流i_ext (nA→μA, ×10⁻³), syn_weight (μS→mS, ×10⁻³)</p></li>
 </ul>
 </section>
 </section>
-<section id="id14">
-<h2>参考リンク<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id12">
+<h2>参考リンク<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://nrn.readthedocs.io/en/latest/guide/units.html">NEURON Units Guide</a> - NEURON単位系の公式リファレンス</p></li>
-<li><p><a class="reference external" href="https://alleninstitute.github.io/bmtk/current_clamps.html">BMTK Current Clamps Documentation</a> - BMTKでの電流単位(pA)の説明</p></li>
+<li><p><a class="reference external" href="https://alleninstitute.github.io/bmtk/current_clamps.html">BMTK Current Clamps Documentation</a> - BMTKでの電流注入(IClamp)の指定方法</p></li>
 <li><p><a class="reference external" href="https://github.com/AllenInstitute/sonata/blob/master/docs/SONATA_DEVELOPER_GUIDE.md">SONATA Developer Guide</a> - syn_weight等のSONATAフォーマット仕様</p></li>
 <li><p><a class="reference external" href="http://www.neuronland.org/NLMorphologyConverter/MorphologyFormats/SWC/Spec.html">SWC File Format Specification</a> - SWCファイルの座標単位(μm)の仕様</p></li>
 <li><p><a class="reference external" href="https://nrn.readthedocs.io/en/latest/nmodl/transpiler/contents/visitors.html#parsing-model-and-constructing-ast">NMODL Transpiler</a> - DEPTHの単位定義</p></li>

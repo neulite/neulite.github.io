@@ -406,16 +406,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id6">内部処理での単位変換</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id9">単位系一覧</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id10">その他のパラメータ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#bmtk-neuron">BMTK → NEURON での変換</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id8">単位系一覧</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id9">その他のパラメータ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id12">開発者向け情報</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id13">変換処理の実装箇所</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id10">開発者向け情報</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id11">変換処理の実装箇所</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id14">参考リンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id12">参考リンク</a></li>
 </ul>
 </li>
 </ul>
@@ -593,7 +592,7 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 <p>2026年5月時点では、BMTKの最新版はpandas 3.x 系やNumPy 2.x 系との互換性に問題がある場合があります。
 BMTKを使用する環境では、pandas 2.x 系およびNumPy 1.x 系の利用を推奨します。</p>
 <p>既にpandas 3.x 系またはNumPy 2.x 系がインストールされている場合は、以下のようにバージョンを変更してください。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;pandas&lt;3&quot;</span><span class="w"> </span><span class="s2">&quot;numpy&lt;2&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"pandas&lt;3"</span><span class="w"> </span><span class="s2">"numpy&lt;2"</span>
 </pre></div>
 </div>
 </div>
@@ -649,10 +648,10 @@ BMTKを使用する環境では、pandas 2.x 系およびNumPy 1.x 系の利用�
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># build_network.py</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bionetlite</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeuliteBuilder</span> <span class="k">as</span> <span class="n">NetworkBuilder</span>
 
-<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;my_network&#39;</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">'my_network'</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -670,7 +669,7 @@ ls<span class="w"> </span>bionetlite.py
 <span class="n">python</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">bionetlite</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeuliteBuilder</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bionetlite is ready to use!&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"bionetlite is ready to use!"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>エラーが表示されなければ、セットアップは成功です。</p>
@@ -694,24 +693,24 @@ ls<span class="w"> </span>bionetlite.py
 <h3>ネットワークの構築<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <p>以降のコードはbionetと全く同じです：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create network</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;v1&#39;</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">'v1'</span><span class="p">)</span>
 
 <span class="c1"># Add nodes</span>
 <span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span>
     <span class="n">N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">pop_name</span><span class="o">=</span><span class="s1">&#39;Scnn1a&#39;</span><span class="p">,</span>
-    <span class="n">model_type</span><span class="o">=</span><span class="s1">&#39;biophysical&#39;</span><span class="p">,</span>
-    <span class="n">model_template</span><span class="o">=</span><span class="s1">&#39;ctdb:Biophys1.hoc&#39;</span><span class="p">,</span>
-    <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">&#39;472363762_fit.json&#39;</span><span class="p">,</span>
-    <span class="n">morphology</span><span class="o">=</span><span class="s1">&#39;Scnn1a_473845048_m.swc&#39;</span>
+    <span class="n">pop_name</span><span class="o">=</span><span class="s1">'Scnn1a'</span><span class="p">,</span>
+    <span class="n">model_type</span><span class="o">=</span><span class="s1">'biophysical'</span><span class="p">,</span>
+    <span class="n">model_template</span><span class="o">=</span><span class="s1">'ctdb:Biophys1.hoc'</span><span class="p">,</span>
+    <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">'472363762_fit.json'</span><span class="p">,</span>
+    <span class="n">morphology</span><span class="o">=</span><span class="s1">'Scnn1a_473845048_m.swc'</span>
 <span class="p">)</span>
 
 <span class="c1"># Build network</span>
 <span class="n">net</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
 <span class="c1"># Save to files</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_edges</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_edges</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -764,7 +763,7 @@ ls<span class="w"> </span>bionetlite.py
 <h2>オプション設定<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
 <p>NeuliteBuilderは、以下のオプションパラメータを受け取ることができます：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span>
-    <span class="s1">&#39;v1&#39;</span><span class="p">,</span>
+    <span class="s1">'v1'</span><span class="p">,</span>
     <span class="n">convert_morphologies</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Whether to convert SWC files</span>
     <span class="n">convert_ion_channels</span><span class="o">=</span><span class="kc">True</span>   <span class="c1"># Whether to convert ion channel settings</span>
 <span class="p">)</span>

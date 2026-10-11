@@ -405,16 +405,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api_reference/unit.html#id6">Unit Conversions in Internal Processing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api_reference/unit.html#id9">Unit System List</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api_reference/unit.html#id10">Other Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api_reference/unit.html#bmtk-neuron">Conversion from BMTK to NEURON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_reference/unit.html#id8">Unit System List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_reference/unit.html#id9">Other Parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/unit.html#id12">Developer Information</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api_reference/unit.html#id13">Conversion Implementation Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/unit.html#id10">Developer Information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api_reference/unit.html#id11">Conversion Implementation Locations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api_reference/unit.html#id14">Reference Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/unit.html#id12">Reference Links</a></li>
 </ul>
 </li>
 </ul>
@@ -573,19 +572,19 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># BMTK case</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bmtk.builder.networks</span><span class="w"> </span><span class="kn">import</span> <span class="n">NetworkBuilder</span>
 
-<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;v1&#39;</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">'v1'</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bionetlite case (only change import)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bionetlite</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeuliteBuilder</span> <span class="k">as</span> <span class="n">NetworkBuilder</span>
 
-<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;v1&#39;</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">'v1'</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># Same code</span>
 <span class="n">net</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>         <span class="c1"># Same code</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>  <span class="c1"># Same code</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>  <span class="c1"># Same code</span>
 </pre></div>
 </div>
 </section>
@@ -666,7 +665,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bionetlite</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeuliteBuilder</span> <span class="k">as</span> <span class="n">NetworkBuilder</span>
 
 <span class="c1"># Create network</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;v1&#39;</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">'v1'</span><span class="p">)</span>
 
 <span class="c1"># Add nodes and edges (same as BMTK)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
@@ -674,8 +673,8 @@
 
 <span class="c1"># Build and save</span>
 <span class="n">net</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_edges</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_edges</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
 </pre></div>
 </div>
 <section id="id8">

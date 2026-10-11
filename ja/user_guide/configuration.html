@@ -406,16 +406,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id6">内部処理での単位変換</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id9">単位系一覧</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id10">その他のパラメータ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#bmtk-neuron">BMTK → NEURON での変換</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id8">単位系一覧</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id9">その他のパラメータ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id12">開発者向け情報</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id13">変換処理の実装箇所</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id10">開発者向け情報</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id11">変換処理の実装箇所</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id14">参考リンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id12">参考リンク</a></li>
 </ul>
 </li>
 </ul>
@@ -582,10 +581,10 @@
 <section id="id4">
 <h3>基本的な実行設定<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;tstop&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2000.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;dt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;spike_threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-15.0</span>
+<span class="w">  </span><span class="nt">"run"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"tstop"</span><span class="p">:</span><span class="w"> </span><span class="mf">2000.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"dt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"spike_threshold"</span><span class="p">:</span><span class="w"> </span><span class="mf">-15.0</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -599,14 +598,14 @@
 <section id="id5">
 <h3>入力設定（電流注入）<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;current_clamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;input_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;current_clamp&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IClamp&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;node_set&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;all&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;amp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.120</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1000.0</span>
+<span class="w">  </span><span class="nt">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"current_clamp"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"input_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"current_clamp"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IClamp"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"node_set"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"amp"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.120</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"delay"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mf">1000.0</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -625,10 +624,10 @@
 <section id="id6">
 <h3>コンポーネント設定<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;morphologies_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$COMPONENT_DIR/morphologies&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;biophysical_neuron_models_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$COMPONENT_DIR/biophysical_neuron_models&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;synaptic_models_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$COMPONENT_DIR/synaptic_models&quot;</span>
+<span class="w">  </span><span class="nt">"components"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"morphologies_dir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$COMPONENT_DIR/morphologies"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"biophysical_neuron_models_dir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$COMPONENT_DIR/biophysical_neuron_models"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"synaptic_models_dir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$COMPONENT_DIR/synaptic_models"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -648,10 +647,10 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bionetlite</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeuliteBuilder</span> <span class="k">as</span> <span class="n">NetworkBuilder</span>
 
 <span class="c1"># Auto-generate config.h from config.json</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;mcortex&#39;</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">'mcortex'</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -714,26 +713,26 @@
 
 <span class="c1"># Create SonataConfig object</span>
 <span class="n">config</span> <span class="o">=</span> <span class="n">SonataConfig</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
-    <span class="s1">&#39;run&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;tstop&#39;</span><span class="p">:</span> <span class="mf">3000.0</span><span class="p">,</span>
-        <span class="s1">&#39;dt&#39;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
-        <span class="s1">&#39;spike_threshold&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">20.0</span>
+    <span class="s1">'run'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'tstop'</span><span class="p">:</span> <span class="mf">3000.0</span><span class="p">,</span>
+        <span class="s1">'dt'</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
+        <span class="s1">'spike_threshold'</span><span class="p">:</span> <span class="o">-</span><span class="mf">20.0</span>
     <span class="p">},</span>
-    <span class="s1">&#39;inputs&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;current_clamp&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;input_type&#39;</span><span class="p">:</span> <span class="s1">&#39;current_clamp&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;amp&#39;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span>
-            <span class="s1">&#39;delay&#39;</span><span class="p">:</span> <span class="mf">1000.0</span><span class="p">,</span>
-            <span class="s1">&#39;duration&#39;</span><span class="p">:</span> <span class="mf">2000.0</span>
+    <span class="s1">'inputs'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'current_clamp'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'input_type'</span><span class="p">:</span> <span class="s1">'current_clamp'</span><span class="p">,</span>
+            <span class="s1">'amp'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span>
+            <span class="s1">'delay'</span><span class="p">:</span> <span class="mf">1000.0</span><span class="p">,</span>
+            <span class="s1">'duration'</span><span class="p">:</span> <span class="mf">2000.0</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">})</span>
 
 <span class="c1"># Pass SonataConfig via simulation_config parameter</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;mcortex&#39;</span><span class="p">,</span> <span class="n">simulation_config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">'mcortex'</span><span class="p">,</span> <span class="n">simulation_config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -741,7 +740,7 @@
 <h3>config.h生成の無効化<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
 <p>config.hの自動生成を無効にする場合：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Disable by setting generate_config_h=False</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;mcortex&#39;</span><span class="p">,</span> <span class="n">generate_config_h</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">'mcortex'</span><span class="p">,</span> <span class="n">generate_config_h</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>この場合、既存のconfig.hファイルを使用するか、手動でconfig.hを作成する必要があります。</p>

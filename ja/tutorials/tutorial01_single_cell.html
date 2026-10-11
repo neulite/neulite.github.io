@@ -406,16 +406,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id6">内部処理での単位変換</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id9">単位系一覧</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id10">その他のパラメータ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#bmtk-neuron">BMTK → NEURON での変換</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id8">単位系一覧</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id9">その他のパラメータ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id12">開発者向け情報</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id13">変換処理の実装箇所</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id10">開発者向け情報</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/unit.html#id11">変換処理の実装箇所</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id14">参考リンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_reference/unit.html#id12">参考リンク</a></li>
 </ul>
 </li>
 </ul>
@@ -587,23 +586,23 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bionetlite</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeuliteBuilder</span> <span class="k">as</span> <span class="n">NetworkBuilder</span>
 
 <span class="c1"># Create network</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">&#39;mcortex&#39;</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NetworkBuilder</span><span class="p">(</span><span class="s1">'mcortex'</span><span class="p">)</span>
 
 <span class="c1"># Add a single biophysical neuron</span>
 <span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span>
     <span class="n">N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">pop_name</span><span class="o">=</span><span class="s1">&#39;Scnn1a&#39;</span><span class="p">,</span>
-    <span class="n">model_type</span><span class="o">=</span><span class="s1">&#39;biophysical&#39;</span><span class="p">,</span>
-    <span class="n">model_template</span><span class="o">=</span><span class="s1">&#39;ctdb:Biophys1.hoc&#39;</span><span class="p">,</span>
-    <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">&#39;472363762_fit.json&#39;</span><span class="p">,</span>
-    <span class="n">morphology</span><span class="o">=</span><span class="s1">&#39;Scnn1a_473845048_m.swc&#39;</span>
+    <span class="n">pop_name</span><span class="o">=</span><span class="s1">'Scnn1a'</span><span class="p">,</span>
+    <span class="n">model_type</span><span class="o">=</span><span class="s1">'biophysical'</span><span class="p">,</span>
+    <span class="n">model_template</span><span class="o">=</span><span class="s1">'ctdb:Biophys1.hoc'</span><span class="p">,</span>
+    <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">'472363762_fit.json'</span><span class="p">,</span>
+    <span class="n">morphology</span><span class="o">=</span><span class="s1">'Scnn1a_473845048_m.swc'</span>
 <span class="p">)</span>
 
 <span class="c1"># Build the network</span>
 <span class="n">net</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
 <span class="c1"># Save to files</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;sim_ch01/network&#39;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'sim_ch01/network'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -724,7 +723,7 @@
 <section id="id5">
 <h3>ステップ1: カーネルソースの展開<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <p>Neuliteのkernelディレクトリの内容をbionetliteが生成したkernelディレクトリにコピーします。config.hはbionetliteが生成済みなので除外します：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync<span class="w"> </span>-av<span class="w"> </span>--exclude<span class="o">=</span><span class="s1">&#39;config.h&#39;</span><span class="w"> </span>/path/to/neulite/kernel/<span class="w"> </span>sim_ch01_nl/kernel/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync<span class="w"> </span>-av<span class="w"> </span>--exclude<span class="o">=</span><span class="s1">'config.h'</span><span class="w"> </span>/path/to/neulite/kernel/<span class="w"> </span>sim_ch01_nl/kernel/
 </pre></div>
 </div>
 </section>

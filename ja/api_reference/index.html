@@ -406,16 +406,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="unit.html#id6">内部処理での単位変換</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="unit.html#id9">単位系一覧</a></li>
-<li class="toctree-l3"><a class="reference internal" href="unit.html#id10">その他のパラメータ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="unit.html#bmtk-neuron">BMTK → NEURON での変換</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unit.html#id8">単位系一覧</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unit.html#id9">その他のパラメータ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="unit.html#id12">開発者向け情報</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="unit.html#id13">変換処理の実装箇所</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit.html#id10">開発者向け情報</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unit.html#id11">変換処理の実装箇所</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="unit.html#id14">参考リンク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit.html#id12">参考リンク</a></li>
 </ul>
 </li>
 </ul>
@@ -592,11 +591,11 @@ BMTKコードのimport文を変更するだけで、Neuliteシミュレータ用
 <p>ネットワークにノード（ニューロン）を追加します。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span>
     <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>                              <span class="c1"># Number of neurons</span>
-    <span class="n">pop_name</span><span class="o">=</span><span class="s1">&#39;Exc&#39;</span><span class="p">,</span>                     <span class="c1"># Population name</span>
-    <span class="n">model_type</span><span class="o">=</span><span class="s1">&#39;biophysical&#39;</span><span class="p">,</span>           <span class="c1"># Model type</span>
-    <span class="n">morphology</span><span class="o">=</span><span class="s1">&#39;Scnn1a.swc&#39;</span><span class="p">,</span>            <span class="c1"># Morphology file name</span>
-    <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">&#39;472363762_fit.json&#39;</span><span class="p">,</span>  <span class="c1"># Ion channel parameters</span>
-    <span class="n">ei</span><span class="o">=</span><span class="s1">&#39;e&#39;</span>                              <span class="c1"># &#39;e&#39; (excitatory) or &#39;i&#39; (inhibitory)</span>
+    <span class="n">pop_name</span><span class="o">=</span><span class="s1">'Exc'</span><span class="p">,</span>                     <span class="c1"># Population name</span>
+    <span class="n">model_type</span><span class="o">=</span><span class="s1">'biophysical'</span><span class="p">,</span>           <span class="c1"># Model type</span>
+    <span class="n">morphology</span><span class="o">=</span><span class="s1">'Scnn1a.swc'</span><span class="p">,</span>            <span class="c1"># Morphology file name</span>
+    <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">'472363762_fit.json'</span><span class="p">,</span>  <span class="c1"># Ion channel parameters</span>
+    <span class="n">ei</span><span class="o">=</span><span class="s1">'e'</span>                              <span class="c1"># 'e' (excitatory) or 'i' (inhibitory)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -606,13 +605,13 @@ BMTKコードのimport文を変更するだけで、Neuliteシミュレータ用
 <h4>add_edges()<a class="headerlink" href="#add-edges" title="Link to this heading"></a></h4>
 <p>ネットワークにエッジ（シナプス接続）を追加します。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">add_edges</span><span class="p">(</span>
-    <span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pop_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Exc&#39;</span><span class="p">},</span>         <span class="c1"># Source population</span>
-    <span class="n">target</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pop_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Inh&#39;</span><span class="p">},</span>         <span class="c1"># Target population</span>
+    <span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="s1">'pop_name'</span><span class="p">:</span> <span class="s1">'Exc'</span><span class="p">},</span>         <span class="c1"># Source population</span>
+    <span class="n">target</span><span class="o">=</span><span class="p">{</span><span class="s1">'pop_name'</span><span class="p">:</span> <span class="s1">'Inh'</span><span class="p">},</span>         <span class="c1"># Target population</span>
     <span class="n">connection_rule</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>                  <span class="c1"># Number of connections or probability</span>
     <span class="n">syn_weight</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>                   <span class="c1"># Synaptic weight</span>
     <span class="n">delay</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>                          <span class="c1"># Delay (ms)</span>
-    <span class="n">target_sections</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;somatic&#39;</span><span class="p">,</span> <span class="s1">&#39;basal&#39;</span><span class="p">],</span>  <span class="c1"># Target sections</span>
-    <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">&#39;ExcToInh.json&#39;</span>     <span class="c1"># Synapse parameters</span>
+    <span class="n">target_sections</span><span class="o">=</span><span class="p">[</span><span class="s1">'somatic'</span><span class="p">,</span> <span class="s1">'basal'</span><span class="p">],</span>  <span class="c1"># Target sections</span>
+    <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">'ExcToInh.json'</span>     <span class="c1"># Synapse parameters</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -628,7 +627,7 @@ BMTKコードのimport文を変更するだけで、Neuliteシミュレータ用
 <section id="save-nodes">
 <h4>save_nodes()<a class="headerlink" href="#save-nodes" title="Link to this heading"></a></h4>
 <p>ノード情報を保存します（<a class="reference external" href="https://github.com/AllenInstitute/sonata/tree/master">SONATA</a> 形式 + Neulite形式）。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>生成されるファイル</strong>:</p>
@@ -640,7 +639,7 @@ BMTKコードのimport文を変更するだけで、Neuliteシミュレータ用
 <section id="save-edges">
 <h4>save_edges()<a class="headerlink" href="#save-edges" title="Link to this heading"></a></h4>
 <p>エッジ情報を保存します（SONATA形式 + Neulite形式）。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">save_edges</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">save_edges</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>生成されるファイル</strong>:</p>
@@ -655,14 +654,14 @@ BMTKコードのimport文を変更するだけで、Neuliteシミュレータ用
 <section id="set-config-path">
 <h4>set_config_path()<a class="headerlink" href="#set-config-path" title="Link to this heading"></a></h4>
 <p>config.jsonのパスを設定します。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">set_config_path</span><span class="p">(</span><span class="s1">&#39;config.json&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">set_config_path</span><span class="p">(</span><span class="s1">'config.json'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="set-dir">
 <h4>set_dir()<a class="headerlink" href="#set-dir" title="Link to this heading"></a></h4>
 <p>Neuliteファイルのディレクトリパスを設定します。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">set_dir</span><span class="p">(</span><span class="n">ion_dir</span><span class="o">=</span><span class="s1">&#39;data/ion&#39;</span><span class="p">,</span> <span class="n">swc_dir</span><span class="o">=</span><span class="s1">&#39;data/morphology&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">net</span><span class="o">.</span><span class="n">set_dir</span><span class="p">(</span><span class="n">ion_dir</span><span class="o">=</span><span class="s1">'data/ion'</span><span class="p">,</span> <span class="n">swc_dir</span><span class="o">=</span><span class="s1">'data/morphology'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -673,34 +672,34 @@ BMTKコードのimport文を変更するだけで、Neuliteシミュレータ用
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bionetlite</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeuliteBuilder</span>
 
 <span class="c1"># Network initialization</span>
-<span class="n">net</span> <span class="o">=</span> <span class="n">NeuliteBuilder</span><span class="p">(</span><span class="s1">&#39;V1&#39;</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NeuliteBuilder</span><span class="p">(</span><span class="s1">'V1'</span><span class="p">)</span>
 
 <span class="c1"># Add excitatory neurons</span>
-<span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">pop_name</span><span class="o">=</span><span class="s1">&#39;Exc&#39;</span><span class="p">,</span> <span class="n">model_type</span><span class="o">=</span><span class="s1">&#39;biophysical&#39;</span><span class="p">,</span>
-              <span class="n">morphology</span><span class="o">=</span><span class="s1">&#39;Scnn1a.swc&#39;</span><span class="p">,</span>
-              <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">&#39;472363762_fit.json&#39;</span><span class="p">,</span> <span class="n">ei</span><span class="o">=</span><span class="s1">&#39;e&#39;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">pop_name</span><span class="o">=</span><span class="s1">'Exc'</span><span class="p">,</span> <span class="n">model_type</span><span class="o">=</span><span class="s1">'biophysical'</span><span class="p">,</span>
+              <span class="n">morphology</span><span class="o">=</span><span class="s1">'Scnn1a.swc'</span><span class="p">,</span>
+              <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">'472363762_fit.json'</span><span class="p">,</span> <span class="n">ei</span><span class="o">=</span><span class="s1">'e'</span><span class="p">)</span>
 
 <span class="c1"># Add inhibitory neurons</span>
-<span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">pop_name</span><span class="o">=</span><span class="s1">&#39;Inh&#39;</span><span class="p">,</span> <span class="n">model_type</span><span class="o">=</span><span class="s1">&#39;biophysical&#39;</span><span class="p">,</span>
-              <span class="n">morphology</span><span class="o">=</span><span class="s1">&#39;Pvalb.swc&#39;</span><span class="p">,</span>
-              <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">&#39;472912177_fit.json&#39;</span><span class="p">,</span> <span class="n">ei</span><span class="o">=</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">pop_name</span><span class="o">=</span><span class="s1">'Inh'</span><span class="p">,</span> <span class="n">model_type</span><span class="o">=</span><span class="s1">'biophysical'</span><span class="p">,</span>
+              <span class="n">morphology</span><span class="o">=</span><span class="s1">'Pvalb.swc'</span><span class="p">,</span>
+              <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">'472912177_fit.json'</span><span class="p">,</span> <span class="n">ei</span><span class="o">=</span><span class="s1">'i'</span><span class="p">)</span>
 
 <span class="c1"># Exc -&gt; Exc connection</span>
-<span class="n">net</span><span class="o">.</span><span class="n">add_edges</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pop_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Exc&#39;</span><span class="p">},</span> <span class="n">target</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pop_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Exc&#39;</span><span class="p">},</span>
+<span class="n">net</span><span class="o">.</span><span class="n">add_edges</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="s1">'pop_name'</span><span class="p">:</span> <span class="s1">'Exc'</span><span class="p">},</span> <span class="n">target</span><span class="o">=</span><span class="p">{</span><span class="s1">'pop_name'</span><span class="p">:</span> <span class="s1">'Exc'</span><span class="p">},</span>
               <span class="n">connection_rule</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">syn_weight</span><span class="o">=</span><span class="mf">0.0005</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
-              <span class="n">target_sections</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;basal&#39;</span><span class="p">,</span> <span class="s1">&#39;apical&#39;</span><span class="p">],</span>
-              <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">&#39;ExcToExc.json&#39;</span><span class="p">)</span>
+              <span class="n">target_sections</span><span class="o">=</span><span class="p">[</span><span class="s1">'basal'</span><span class="p">,</span> <span class="s1">'apical'</span><span class="p">],</span>
+              <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">'ExcToExc.json'</span><span class="p">)</span>
 
 <span class="c1"># Exc -&gt; Inh connection</span>
-<span class="n">net</span><span class="o">.</span><span class="n">add_edges</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pop_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Exc&#39;</span><span class="p">},</span> <span class="n">target</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pop_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Inh&#39;</span><span class="p">},</span>
+<span class="n">net</span><span class="o">.</span><span class="n">add_edges</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="s1">'pop_name'</span><span class="p">:</span> <span class="s1">'Exc'</span><span class="p">},</span> <span class="n">target</span><span class="o">=</span><span class="p">{</span><span class="s1">'pop_name'</span><span class="p">:</span> <span class="s1">'Inh'</span><span class="p">},</span>
               <span class="n">connection_rule</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">syn_weight</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
-              <span class="n">target_sections</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;somatic&#39;</span><span class="p">,</span> <span class="s1">&#39;basal&#39;</span><span class="p">],</span>
-              <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">&#39;ExcToInh.json&#39;</span><span class="p">)</span>
+              <span class="n">target_sections</span><span class="o">=</span><span class="p">[</span><span class="s1">'somatic'</span><span class="p">,</span> <span class="s1">'basal'</span><span class="p">],</span>
+              <span class="n">dynamics_params</span><span class="o">=</span><span class="s1">'ExcToInh.json'</span><span class="p">)</span>
 
 <span class="c1"># Build and save</span>
 <span class="n">net</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
-<span class="n">net</span><span class="o">.</span><span class="n">save_edges</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_nodes</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">save_edges</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">'network'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
